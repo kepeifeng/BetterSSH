@@ -7,15 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0422DDC217D9B71A003F5D23 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 0422DDC117D9B71A003F5D23 /* ICON.png */; };
+		0422DDC417D9B739003F5D23 /* ICON.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0422DDC317D9B739003F5D23 /* ICON.icns */; };
+		0422DDC717D9B9A9003F5D23 /* sshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0422DDC617D9B9A9003F5D23 /* sshController.m */; };
+		0422DDCA17D9DEAD003F5D23 /* presetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0422DDC917D9DEAD003F5D23 /* presetManager.m */; };
+		043A952717D9845D0019CD1A /* sshConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A952617D9845D0019CD1A /* sshConfig.m */; };
+		043A952A17D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A952817D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png */; };
+		043A952B17D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A952917D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png */; };
+		043A952E17D994A90019CD1A /* pull-down-hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A952C17D994A90019CD1A /* pull-down-hl.png */; };
+		043A952F17D994A90019CD1A /* pull-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A952D17D994A90019CD1A /* pull-down.png */; };
+		043A953117D99F020019CD1A /* pull-down-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A953017D99F020019CD1A /* pull-down-orange.png */; };
+		043A953317D9A16E0019CD1A /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043A953217D9A16E0019CD1A /* loading.gif */; };
+		043A953617D9A3ED0019CD1A /* start-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A953417D9A3ED0019CD1A /* start-highlight.png */; };
+		043A953717D9A3ED0019CD1A /* start-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A953517D9A3ED0019CD1A /* start-normal.png */; };
 		04F001FA17D87EFD00749E05 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F001F917D87EFD00749E05 /* Cocoa.framework */; };
 		04F0020417D87EFD00749E05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F0020217D87EFD00749E05 /* InfoPlist.strings */; };
 		04F0020617D87EFD00749E05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0020517D87EFD00749E05 /* main.m */; };
 		04F0020A17D87EFD00749E05 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 04F0020817D87EFD00749E05 /* Credits.rtf */; };
 		04F0020D17D87EFD00749E05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0020C17D87EFD00749E05 /* AppDelegate.m */; };
 		04F0021017D87EFD00749E05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0020E17D87EFD00749E05 /* MainMenu.xib */; };
+		04F0021817D88A2000749E05 /* startButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0021717D88A2000749E05 /* startButton.m */; };
+		04F0022117D895EA00749E05 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0021B17D895EA00749E05 /* button.png */; };
+		04F0022217D895EA00749E05 /* circle_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0021C17D895EA00749E05 /* circle_light.png */; };
+		04F0022317D895EA00749E05 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0021D17D895EA00749E05 /* circle.png */; };
+		04F0022517D895EA00749E05 /* start_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0021F17D895EA00749E05 /* start_dark.png */; };
+		04F0022617D895EA00749E05 /* start_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022017D895EA00749E05 /* start_light.png */; };
+		04F0022D17D8CE5E00749E05 /* tabs_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022717D8CE5E00749E05 /* tabs_01.png */; };
+		04F0022E17D8CE5E00749E05 /* tabs_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022817D8CE5E00749E05 /* tabs_02.png */; };
+		04F0022F17D8CE5E00749E05 /* tabs_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022917D8CE5E00749E05 /* tabs_03.png */; };
+		04F0023017D8CE5E00749E05 /* tabs_highlight_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */; };
+		04F0023117D8CE5E00749E05 /* tabs_highlight_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */; };
+		04F0023217D8CE5E00749E05 /* tabs_highlight_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022C17D8CE5E00749E05 /* tabs_highlight_03.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0422DDC117D9B71A003F5D23 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
+		0422DDC317D9B739003F5D23 /* ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ICON.icns; sourceTree = "<group>"; };
+		0422DDC517D9B9A9003F5D23 /* sshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sshController.h; sourceTree = "<group>"; };
+		0422DDC617D9B9A9003F5D23 /* sshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sshController.m; sourceTree = "<group>"; };
+		0422DDC817D9DEAD003F5D23 /* presetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presetManager.h; sourceTree = "<group>"; };
+		0422DDC917D9DEAD003F5D23 /* presetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = presetManager.m; sourceTree = "<group>"; };
+		043A952517D9845D0019CD1A /* sshConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sshConfig.h; sourceTree = "<group>"; };
+		043A952617D9845D0019CD1A /* sshConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sshConfig.m; sourceTree = "<group>"; };
+		043A952817D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAVE-AS-PRESET-HIGHLIGHT.png"; sourceTree = "<group>"; };
+		043A952917D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAVE-AS-PRESET-NORMAL.png"; sourceTree = "<group>"; };
+		043A952C17D994A90019CD1A /* pull-down-hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-down-hl.png"; sourceTree = "<group>"; };
+		043A952D17D994A90019CD1A /* pull-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-down.png"; sourceTree = "<group>"; };
+		043A953017D99F020019CD1A /* pull-down-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-down-orange.png"; sourceTree = "<group>"; };
+		043A953217D9A16E0019CD1A /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		043A953417D9A3ED0019CD1A /* start-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-highlight.png"; sourceTree = "<group>"; };
+		043A953517D9A3ED0019CD1A /* start-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-normal.png"; sourceTree = "<group>"; };
 		04F001F617D87EFD00749E05 /* BetterSSH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterSSH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F001F917D87EFD00749E05 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		04F001FC17D87EFD00749E05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -29,6 +70,19 @@
 		04F0020B17D87EFD00749E05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04F0020C17D87EFD00749E05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04F0020F17D87EFD00749E05 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		04F0021617D88A2000749E05 /* startButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startButton.h; sourceTree = "<group>"; };
+		04F0021717D88A2000749E05 /* startButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startButton.m; sourceTree = "<group>"; };
+		04F0021B17D895EA00749E05 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		04F0021C17D895EA00749E05 /* circle_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_light.png; sourceTree = "<group>"; };
+		04F0021D17D895EA00749E05 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		04F0021F17D895EA00749E05 /* start_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_dark.png; sourceTree = "<group>"; };
+		04F0022017D895EA00749E05 /* start_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_light.png; sourceTree = "<group>"; };
+		04F0022717D8CE5E00749E05 /* tabs_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_01.png; path = ../tabs_01.png; sourceTree = "<group>"; };
+		04F0022817D8CE5E00749E05 /* tabs_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_02.png; path = ../tabs_02.png; sourceTree = "<group>"; };
+		04F0022917D8CE5E00749E05 /* tabs_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_03.png; path = ../tabs_03.png; sourceTree = "<group>"; };
+		04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_01.png; path = ../tabs_highlight_01.png; sourceTree = "<group>"; };
+		04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_02.png; path = ../tabs_highlight_02.png; sourceTree = "<group>"; };
+		04F0022C17D8CE5E00749E05 /* tabs_highlight_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_03.png; path = ../tabs_highlight_03.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +100,8 @@
 		04F001ED17D87EFD00749E05 = {
 			isa = PBXGroup;
 			children = (
+				0422DDC317D9B739003F5D23 /* ICON.icns */,
+				0422DDC117D9B71A003F5D23 /* ICON.png */,
 				04F001FF17D87EFD00749E05 /* BetterSSH */,
 				04F001F817D87EFD00749E05 /* Frameworks */,
 				04F001F717D87EFD00749E05 /* Products */,
@@ -82,10 +138,37 @@
 		04F001FF17D87EFD00749E05 /* BetterSSH */ = {
 			isa = PBXGroup;
 			children = (
+				043A953417D9A3ED0019CD1A /* start-highlight.png */,
+				043A953517D9A3ED0019CD1A /* start-normal.png */,
+				043A953217D9A16E0019CD1A /* loading.gif */,
+				043A953017D99F020019CD1A /* pull-down-orange.png */,
+				043A952C17D994A90019CD1A /* pull-down-hl.png */,
+				043A952D17D994A90019CD1A /* pull-down.png */,
+				043A952817D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png */,
+				043A952917D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png */,
+				04F0022717D8CE5E00749E05 /* tabs_01.png */,
+				04F0022817D8CE5E00749E05 /* tabs_02.png */,
+				04F0022917D8CE5E00749E05 /* tabs_03.png */,
+				04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */,
+				04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */,
+				04F0022C17D8CE5E00749E05 /* tabs_highlight_03.png */,
+				04F0021B17D895EA00749E05 /* button.png */,
+				04F0021C17D895EA00749E05 /* circle_light.png */,
+				04F0021D17D895EA00749E05 /* circle.png */,
+				04F0021F17D895EA00749E05 /* start_dark.png */,
+				04F0022017D895EA00749E05 /* start_light.png */,
 				04F0020B17D87EFD00749E05 /* AppDelegate.h */,
 				04F0020C17D87EFD00749E05 /* AppDelegate.m */,
 				04F0020E17D87EFD00749E05 /* MainMenu.xib */,
+				0422DDC517D9B9A9003F5D23 /* sshController.h */,
+				0422DDC617D9B9A9003F5D23 /* sshController.m */,
 				04F0020017D87EFD00749E05 /* Supporting Files */,
+				04F0021617D88A2000749E05 /* startButton.h */,
+				04F0021717D88A2000749E05 /* startButton.m */,
+				043A952517D9845D0019CD1A /* sshConfig.h */,
+				043A952617D9845D0019CD1A /* sshConfig.m */,
+				0422DDC817D9DEAD003F5D23 /* presetManager.h */,
+				0422DDC917D9DEAD003F5D23 /* presetManager.m */,
 			);
 			path = BetterSSH;
 			sourceTree = "<group>";
@@ -156,6 +239,27 @@
 				04F0020417D87EFD00749E05 /* InfoPlist.strings in Resources */,
 				04F0020A17D87EFD00749E05 /* Credits.rtf in Resources */,
 				04F0021017D87EFD00749E05 /* MainMenu.xib in Resources */,
+				04F0022117D895EA00749E05 /* button.png in Resources */,
+				04F0022217D895EA00749E05 /* circle_light.png in Resources */,
+				04F0022317D895EA00749E05 /* circle.png in Resources */,
+				04F0022517D895EA00749E05 /* start_dark.png in Resources */,
+				04F0022617D895EA00749E05 /* start_light.png in Resources */,
+				04F0022D17D8CE5E00749E05 /* tabs_01.png in Resources */,
+				04F0022E17D8CE5E00749E05 /* tabs_02.png in Resources */,
+				04F0022F17D8CE5E00749E05 /* tabs_03.png in Resources */,
+				04F0023017D8CE5E00749E05 /* tabs_highlight_01.png in Resources */,
+				04F0023117D8CE5E00749E05 /* tabs_highlight_02.png in Resources */,
+				04F0023217D8CE5E00749E05 /* tabs_highlight_03.png in Resources */,
+				043A952A17D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png in Resources */,
+				043A952B17D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png in Resources */,
+				043A952E17D994A90019CD1A /* pull-down-hl.png in Resources */,
+				043A952F17D994A90019CD1A /* pull-down.png in Resources */,
+				043A953117D99F020019CD1A /* pull-down-orange.png in Resources */,
+				043A953317D9A16E0019CD1A /* loading.gif in Resources */,
+				043A953617D9A3ED0019CD1A /* start-highlight.png in Resources */,
+				043A953717D9A3ED0019CD1A /* start-normal.png in Resources */,
+				0422DDC217D9B71A003F5D23 /* ICON.png in Resources */,
+				0422DDC417D9B739003F5D23 /* ICON.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +272,10 @@
 			files = (
 				04F0020617D87EFD00749E05 /* main.m in Sources */,
 				04F0020D17D87EFD00749E05 /* AppDelegate.m in Sources */,
+				04F0021817D88A2000749E05 /* startButton.m in Sources */,
+				043A952717D9845D0019CD1A /* sshConfig.m in Sources */,
+				0422DDC717D9B9A9003F5D23 /* sshController.m in Sources */,
+				0422DDCA17D9DEAD003F5D23 /* presetManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +411,7 @@
 				04F0021517D87EFD00749E05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

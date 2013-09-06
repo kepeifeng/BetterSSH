@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>ICON</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.aroh.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

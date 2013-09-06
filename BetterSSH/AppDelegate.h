@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "presetManager.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
