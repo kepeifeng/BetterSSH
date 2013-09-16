@@ -11,12 +11,6 @@
 
 @interface sshController : NSObject
 
-@property sshConfig *config;
 
-@property NSArray *presets;
-
-@property bool autoConnect;
-
-@property bool autoStartAtLogin;
 
 @end

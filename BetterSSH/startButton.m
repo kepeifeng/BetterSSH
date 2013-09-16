@@ -10,10 +10,6 @@
 
 @interface startButton()
 
-@property NSImage *button;
-@property NSImage *start;
-@property NSImage *circle;
-
 @end
 
 @implementation startButton
@@ -38,23 +34,12 @@
 - (void)setStatus:(connectionStatus)status{
     
     if(status == DISCONNECT){
-        
-        self.button = [NSImage imageNamed:@"button.png"];
-        self.start = [NSImage imageNamed:@"start_dark.png"];
-        self.circle = [NSImage imageNamed:@"circle.png"];
-    
+            
     }
-    else if(status == CONNECTTING){
-        
-        //self.button = [NSImage imageNamed:@"button.png"];
-        self.start = [NSImage imageNamed:@"start_dark.png"];
-        self.circle = [NSImage imageNamed:@"loading.gif"];
+    else if(status == CONNECTING){
+            }
+    else if(status == CONNECTED){
     
-    }
-    else if(status == CONNECTTED){
-    
-        self.start = [NSImage imageNamed:@"start_light.png"];
-        self.circle = [NSImage imageNamed:@"circle_light.png"];
     }
     
     

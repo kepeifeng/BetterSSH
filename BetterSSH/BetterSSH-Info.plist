@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>ICON</string>
+	<string>ICON 2</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.aroh.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -27,7 +27,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013年 Kent Peifeng Ke. All rights reserved.</string>
+	<string>Copyright © 2013 Kent Peifeng Ke. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

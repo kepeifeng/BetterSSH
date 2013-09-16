@@ -7,17 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
-typedef enum connectionStatusTypes{
-
-    DISCONNECT,
-    CONNECTTING,
-    CONNECTTED
-}connectionStatus;
+#import "sshConfig.h"
 
 
-@interface startButton : NSButton
+
+@interface startButton : NSButton{
+
+    IBOutlet NSImage *button;
+}
 @property (nonatomic) connectionStatus status;
+
 
 
 @end

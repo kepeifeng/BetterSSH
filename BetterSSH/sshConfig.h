@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum connectionStatusTypes{
+    
+    DISCONNECT,
+    CONNECTING,
+    CONNECTED
+}connectionStatus;
+
+
 @interface sshConfig : NSObject
 
 @property (nonatomic) NSString *hostName;
-@property (nonatomic) NSNumber *portNumber;
-@property (nonatomic) NSNumber *socksPortNumber;
+@property (nonatomic) NSUInteger portNumber;
+@property (nonatomic) NSUInteger socksPortNumber;
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *password;
 @property (nonatomic) NSString *obfuscationKey;
@@ -20,11 +28,15 @@
 
 -(id)initWithDetail:(NSString *)presetName
              hostName:(NSString *) hostName
-            portNumber:(NSNumber *)portNumber
-            sockPortNumber:(NSNumber *)socksPortNumber
+            portNumber:(NSUInteger )portNumber
+            sockPortNumber:(NSUInteger )socksPortNumber
             userName:(NSString *)userName
             password:(NSString *)password
             obfuscationKey:(NSString *)obfuscationKey;
+
+-(NSDictionary *)getDictionary;
++(sshConfig *)getSshConfigFromDictionary:(NSDictionary *)dictionary;
++(NSDictionary *)getDictionaryFromSshConfig:(sshConfig *)config;
 
 
 
