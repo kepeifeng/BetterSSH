@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/myTableCellView.m"
-         timestampString = "400493440.612323"
+         timestampString = "401193287.731489"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
          landmarkName = "-setIsSelected:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/myTableView.m"
-         timestampString = "400329024.006613"
+         timestampString = "401104910.099661"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "-selectedCell"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/presetManager.m"
-         timestampString = "400928437.956755"
+         timestampString = "401198140.800791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "402"
-         endingLineNumber = "402"
+         startingLineNumber = "450"
+         endingLineNumber = "450"
          landmarkName = "-savePresetsToFile"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/presetManager.m"
-         timestampString = "400928437.956755"
+         timestampString = "401198140.800791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "367"
-         endingLineNumber = "367"
+         startingLineNumber = "417"
+         endingLineNumber = "417"
          landmarkName = "-getPresetsFromFile"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/TaskWrapper.m"
-         timestampString = "400918175.799593"
+         timestampString = "401125328.505661"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "-startProcess"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/presetManager.m"
-         timestampString = "400928437.956755"
+         timestampString = "401198140.800791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "337"
-         endingLineNumber = "337"
+         startingLineNumber = "387"
+         endingLineNumber = "387"
          landmarkName = "-convertSshConfigListToDictionaryList:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/AppDelegate.m"
-         timestampString = "401017616.462143"
+         timestampString = "401125831.002298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "666"
-         endingLineNumber = "666"
+         startingLineNumber = "719"
+         endingLineNumber = "719"
          landmarkName = "-setConnectionStatus:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/AppDelegate.m"
-         timestampString = "401017616.462143"
+         timestampString = "401125831.002298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "667"
-         endingLineNumber = "667"
+         startingLineNumber = "720"
+         endingLineNumber = "720"
          landmarkName = "-setConnectionStatus:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,12 +203,90 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BetterSSH/AppDelegate.m"
-         timestampString = "401017616.462143"
+         timestampString = "401125831.002298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "748"
-         endingLineNumber = "748"
+         startingLineNumber = "806"
+         endingLineNumber = "806"
          landmarkName = "-setIsExpaned:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BetterSSH/presetManager.m"
+         timestampString = "401198140.800791"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "279"
+         endingLineNumber = "279"
+         landmarkName = "-tableView:viewForTableColumn:row:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BetterSSH/presetManager.m"
+         timestampString = "401198140.800791"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "306"
+         endingLineNumber = "306"
+         landmarkName = "-tableViewSelectionDidChange:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BetterSSH/myTableRowView.m"
+         timestampString = "401104060.100804"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "-drawSelectionInRect:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BetterSSH/presetManager.m"
+         timestampString = "401198140.800791"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "325"
+         endingLineNumber = "325"
+         landmarkName = "-tableView:rowViewForRow:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BetterSSH/AppDelegate.m"
+         timestampString = "401125839.595395"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "596"
+         endingLineNumber = "596"
+         landmarkName = "-createMenu"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BetterSSH/AppDelegate.m"
+         timestampString = "401126067.958333"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "457"
+         endingLineNumber = "457"
+         landmarkName = "-loadPrefs"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -25,6 +25,7 @@ typedef enum connectionStatusTypes{
 @property (nonatomic) NSString *password;
 @property (nonatomic) NSString *obfuscationKey;
 @property (nonatomic) NSString *presetName;
+@property NSInteger pingTime;
 
 -(id)initWithDetail:(NSString *)presetName
              hostName:(NSString *) hostName

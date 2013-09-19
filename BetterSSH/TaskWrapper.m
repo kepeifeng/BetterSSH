@@ -122,13 +122,7 @@
 
     // launch the task asynchronously
     [task launch];
-    
-    NSObject *controllerObject = controller;
-    
-//    [controllerObject performSelectorInBackground:@selector(processStarted) withObject:nil ];
-    
-    
-
+  
     // We first let the controller know that we are starting
     [controller processStarted];
     

@@ -7,12 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "sshConfig.h"
 
 @interface myTableCellView : NSTableCellView
 
 @property IBOutlet NSTextField *backgroundLayer;
 
-@property (nonatomic) BOOL isSelected;
+@property BOOL isSelected;
+//@property NSInteger progressValue;
+@property NSNumber *progressValue;
+@property id objectValue;
 
 
 @end

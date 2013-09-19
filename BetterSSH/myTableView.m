@@ -25,8 +25,11 @@ myTableCellView *_lastSelectedCell;
 
 - (void)drawRect:(NSRect)dirtyRect
 {
+    [super drawRect:dirtyRect];
     // Drawing code here.
 }
+
+
 
 -(NSColor *)highlightColor{
 

@@ -39,6 +39,7 @@
 	IBOutlet NSButton *connectButton;
     
     IBOutlet NSWindow *window;
+    IBOutlet NSWindow *openAtLoginSheet;
     
     IBOutlet NSMatrix *tabMatrix;
     
@@ -77,6 +78,10 @@
 
 
 
+- (IBAction)openAtLoginButtonClicked:(id)sender;
+- (IBAction)closeOpenAtLoginSheetButtonClicked:(id)sender;
+- (IBAction)importPresetsClicked:(id)sender;
+- (IBAction)exportPresetsClicked:(id)sender;
 
 - (IBAction)doConnect:(id)sender;
 - (void)toggleSOCKSSetting:(bool)status;
@@ -87,6 +92,10 @@
 - (BOOL)windowShouldClose:(id)theWindow;
 - (void)applicationWillTerminate:(NSApplication *)theApplication;
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication;
+
+
+
+
 
 //Add by Ling
 -(bool)doAutoConnect;

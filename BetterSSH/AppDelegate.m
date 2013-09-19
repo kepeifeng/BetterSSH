@@ -87,15 +87,15 @@ id statusBarIconConnected;
 	preferences = [NSUserDefaults standardUserDefaults];
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                           @"" ,@"hostName",
-                          @"22" , @"portNumber",
+                          [NSNumber numberWithUnsignedInteger:22] , @"portNumber",
                           @"", @"obfuscationKey",
                           @"", @"userName",
                           @"",@"password",
-                          @"8088", @"socksPortNumber",
-                          @"30",@"timeout",
+                          [NSNumber numberWithUnsignedInteger:8088], @"socksPortNumber",
+                          [NSNumber numberWithInteger:30],@"timeout",
                           //[NSNumber numberWithInt:0], @"applyToNetwork",
                           //[NSNumber numberWithInt:0], @"isAsyncKeysFirst",
-                          NO, @"isAutoLogin",
+                          [NSNumber numberWithBool:NO], @"isAutoLogin",
                           nil ]; // terminate the list
 	[preferences registerDefaults:dict];
     
@@ -162,6 +162,60 @@ id statusBarIconConnected;
     
     [tabView selectTabViewItemAtIndex:[[sender selectedCell] tag]];
 
+}
+
+
+
+
+- (IBAction)openAtLoginButtonClicked:(id)sender {
+
+    [NSApp beginSheet:openAtLoginSheet modalForWindow:window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+
+}
+
+- (IBAction)closeOpenAtLoginSheetButtonClicked:(id)sender {
+    
+    [NSApp endSheet:openAtLoginSheet];
+    
+}
+
+- (IBAction)importPresetsClicked:(id)sender {
+    
+    NSString *error;
+    if([self.presetManager importPresets:error]){
+        
+        [tabMatrix selectCellAtRow:0 column:1];
+        
+    }
+    else{
+        
+        if(error)
+            NSLog(@"%@",error);
+    }
+    
+}
+
+- (IBAction)exportPresetsClicked:(id)sender {
+    
+    NSString *error;
+    if([self.presetManager exportPresets:error]){
+    
+        //TODO: say preset exported
+    
+    }
+    else{
+    
+        if(error)
+            NSLog(@"%@",error);
+    }
+    
+}
+
+
+-(void)sheetDidEnd:(NSWindow *)targetSheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo{
+    
+    [targetSheet orderOut:self];
+    
 }
 
 
@@ -544,17 +598,16 @@ id statusBarIconConnected;
     NSMenu *menu = [[NSMenu allocWithZone:menuZone] init];
     NSMenuItem *menuItem;
     
-    menuItem = [menu addItemWithTitle:@"Status: DISCONNECT" action:nil keyEquivalent:@"status"];
+    menuItem = [menu addItemWithTitle:@"Status: DISCONNECT" action:nil keyEquivalent:@""];
     [menuItem setTag:1];
-    [menuItem  setTarget:self];
     
     // Add Separator
     [menu addItem:[NSMenuItem separatorItem]];
     
     // Add To Items
     menuItem = [menu addItemWithTitle:@"Connect"
-                               action:@selector(doConnect:)
-                        keyEquivalent:@"connect"];
+                               action:@selector(doAutoConnect)
+                        keyEquivalent:@""];
     
     [menuItem setTag:2];
     [menuItem setTarget:self];
@@ -675,7 +728,12 @@ id statusBarIconConnected;
 -(void)presetSelectedToConnect:(sshConfig *)preset{
     
     NSLog(@"presetSelectedToConnect, preset = %@", preset);
-
+    self.config = preset;
+    
+    //Turn to Config Tab
+    [tabMatrix selectCellAtRow:0 column:0];
+    
+    [self doAutoConnect];
 
 }
 

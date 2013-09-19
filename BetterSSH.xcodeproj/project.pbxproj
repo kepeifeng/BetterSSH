@@ -19,15 +19,45 @@
 		043A952F17D994A90019CD1A /* pull-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A952D17D994A90019CD1A /* pull-down.png */; };
 		043A953117D99F020019CD1A /* pull-down-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A953017D99F020019CD1A /* pull-down-orange.png */; };
 		043A953317D9A16E0019CD1A /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043A953217D9A16E0019CD1A /* loading.gif */; };
-		043A953617D9A3ED0019CD1A /* start-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A953417D9A3ED0019CD1A /* start-highlight.png */; };
 		043A953717D9A3ED0019CD1A /* start-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 043A953517D9A3ED0019CD1A /* start-normal.png */; };
 		0442B5AF17E70E300053C366 /* preset-list-border.png in Resources */ = {isa = PBXBuildFile; fileRef = 0442B5AE17E70E300053C366 /* preset-list-border.png */; };
+		04511BA417E7F07F00A5498E /* open-at-login-zh.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BA317E7F07F00A5498E /* open-at-login-zh.png */; };
+		04511BA617E7F0DE00A5498E /* open-at-login-en.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BA517E7F0DE00A5498E /* open-at-login-en.png */; };
+		04511BA917E80DCE00A5498E /* start-at-login-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BA717E80DCE00A5498E /* start-at-login-highlight.png */; };
+		04511BAA17E80DCE00A5498E /* start-at-login-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BA817E80DCE00A5498E /* start-at-login-normal.png */; };
+		04511BB717E8139700A5498E /* close-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BAB17E8139700A5498E /* close-highlight.png */; };
+		04511BB817E8139700A5498E /* close-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BAC17E8139700A5498E /* close-normal.png */; };
+		04511BB917E8139700A5498E /* cancel-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BAD17E8139700A5498E /* cancel-highlight.png */; };
+		04511BBA17E8139700A5498E /* cancel-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BAE17E8139700A5498E /* cancel-normal.png */; };
+		04511BBB17E8139700A5498E /* save-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BAF17E8139700A5498E /* save-highlight.png */; };
+		04511BBC17E8139700A5498E /* save-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB017E8139700A5498E /* save-normal.png */; };
+		04511BBD17E8139700A5498E /* edit-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB117E8139700A5498E /* edit-highlight.png */; };
+		04511BBE17E8139700A5498E /* edit-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB217E8139700A5498E /* edit-normal.png */; };
+		04511BBF17E8139700A5498E /* delete-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB317E8139700A5498E /* delete-highlight.png */; };
+		04511BC017E8139700A5498E /* delete-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB417E8139700A5498E /* delete-normal.png */; };
+		04511BC117E8139700A5498E /* connect-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB517E8139700A5498E /* connect-highlight.png */; };
+		04511BC217E8139700A5498E /* connect-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BB617E8139700A5498E /* connect-normal.png */; };
+		04511BC617E8543700A5498E /* myTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04511BC517E8543700A5498E /* myTableRowView.m */; };
+		04511BC817E8A7AD00A5498E /* start-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 04511BC717E8A7AD00A5498E /* start-highlight.png */; };
+		04511BCA17E8AD1D00A5498E /* preset-file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 04511BC917E8AD1D00A5498E /* preset-file-icon.icns */; };
 		04777F1317DF12FE00DC2790 /* sshConfigPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04777F1217DF12FE00DC2790 /* sshConfigPanel.xib */; };
 		04777F1B17DF1D6C00DC2790 /* sshConfigPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04777F1A17DF1D6C00DC2790 /* sshConfigPanelController.m */; };
 		04790FC117E2F6680003B26E /* presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04790FC017E2F6680003B26E /* presets.plist */; };
 		04790FC217E334A60003B26E /* SecretSocksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C30B9417E191C3004C8DEB /* SecretSocksController.m */; };
 		04928C6617DAD87900F0D829 /* myTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04928C6517DAD87900F0D829 /* myTableView.m */; };
 		04928C6917DAE37A00F0D829 /* myTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04928C6817DAE37A00F0D829 /* myTableCellView.m */; };
+		0493FC8D17E9694B00771582 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493FC8C17E9694B00771582 /* SimplePing.m */; };
+		0493FC9A17E9A0EE00771582 /* progress-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC8F17E9A0EE00771582 /* progress-0.png */; };
+		0493FC9B17E9A0EE00771582 /* progress-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9017E9A0EE00771582 /* progress-1.png */; };
+		0493FC9C17E9A0EE00771582 /* progress-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9117E9A0EE00771582 /* progress-10.png */; };
+		0493FC9D17E9A0EE00771582 /* progress-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9217E9A0EE00771582 /* progress-2.png */; };
+		0493FC9E17E9A0EE00771582 /* progress-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9317E9A0EE00771582 /* progress-3.png */; };
+		0493FC9F17E9A0EE00771582 /* progress-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9417E9A0EE00771582 /* progress-4.png */; };
+		0493FCA017E9A0EE00771582 /* progress-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9517E9A0EE00771582 /* progress-5.png */; };
+		0493FCA117E9A0EE00771582 /* progress-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9617E9A0EE00771582 /* progress-6.png */; };
+		0493FCA217E9A0EE00771582 /* progress-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9717E9A0EE00771582 /* progress-7.png */; };
+		0493FCA317E9A0EE00771582 /* progress-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9817E9A0EE00771582 /* progress-8.png */; };
+		0493FCA417E9A0EE00771582 /* progress-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0493FC9917E9A0EE00771582 /* progress-9.png */; };
 		04ACE98517E59761001A136C /* status-bar-connecting-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ACE98117E59761001A136C /* status-bar-connecting-1.png */; };
 		04ACE98617E59761001A136C /* status-bar-connecting-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ACE98217E59761001A136C /* status-bar-connecting-2.png */; };
 		04ACE98717E59761001A136C /* status-bar-connecting-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ACE98317E59761001A136C /* status-bar-connecting-3.png */; };
@@ -77,6 +107,8 @@
 		0422DDC817D9DEAD003F5D23 /* presetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = presetManager.h; sourceTree = "<group>"; };
 		0422DDC917D9DEAD003F5D23 /* presetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = presetManager.m; sourceTree = "<group>"; };
 		04260C5A17E04BC100E7135B /* sshConfigSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = sshConfigSheet.xib; path = ../sshConfigSheet.xib; sourceTree = "<group>"; };
+		0439337D17E953AE00615C89 /* big_noodle_titling_oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_noodle_titling_oblique.ttf; sourceTree = "<group>"; };
+		0439337E17E953AE00615C89 /* big_noodle_titling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_noodle_titling.ttf; sourceTree = "<group>"; };
 		043A952517D9845D0019CD1A /* sshConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sshConfig.h; sourceTree = "<group>"; };
 		043A952617D9845D0019CD1A /* sshConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sshConfig.m; sourceTree = "<group>"; };
 		043A952817D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAVE-AS-PRESET-HIGHLIGHT.png"; sourceTree = "<group>"; };
@@ -85,9 +117,28 @@
 		043A952D17D994A90019CD1A /* pull-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-down.png"; sourceTree = "<group>"; };
 		043A953017D99F020019CD1A /* pull-down-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-down-orange.png"; sourceTree = "<group>"; };
 		043A953217D9A16E0019CD1A /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
-		043A953417D9A3ED0019CD1A /* start-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-highlight.png"; sourceTree = "<group>"; };
 		043A953517D9A3ED0019CD1A /* start-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-normal.png"; sourceTree = "<group>"; };
 		0442B5AE17E70E300053C366 /* preset-list-border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preset-list-border.png"; sourceTree = "<group>"; };
+		04511BA317E7F07F00A5498E /* open-at-login-zh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-at-login-zh.png"; sourceTree = "<group>"; };
+		04511BA517E7F0DE00A5498E /* open-at-login-en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open-at-login-en.png"; sourceTree = "<group>"; };
+		04511BA717E80DCE00A5498E /* start-at-login-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-at-login-highlight.png"; sourceTree = "<group>"; };
+		04511BA817E80DCE00A5498E /* start-at-login-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-at-login-normal.png"; sourceTree = "<group>"; };
+		04511BAB17E8139700A5498E /* close-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-highlight.png"; sourceTree = "<group>"; };
+		04511BAC17E8139700A5498E /* close-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-normal.png"; sourceTree = "<group>"; };
+		04511BAD17E8139700A5498E /* cancel-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-highlight.png"; sourceTree = "<group>"; };
+		04511BAE17E8139700A5498E /* cancel-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-normal.png"; sourceTree = "<group>"; };
+		04511BAF17E8139700A5498E /* save-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-highlight.png"; sourceTree = "<group>"; };
+		04511BB017E8139700A5498E /* save-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-normal.png"; sourceTree = "<group>"; };
+		04511BB117E8139700A5498E /* edit-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-highlight.png"; sourceTree = "<group>"; };
+		04511BB217E8139700A5498E /* edit-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-normal.png"; sourceTree = "<group>"; };
+		04511BB317E8139700A5498E /* delete-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-highlight.png"; sourceTree = "<group>"; };
+		04511BB417E8139700A5498E /* delete-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-normal.png"; sourceTree = "<group>"; };
+		04511BB517E8139700A5498E /* connect-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect-highlight.png"; sourceTree = "<group>"; };
+		04511BB617E8139700A5498E /* connect-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect-normal.png"; sourceTree = "<group>"; };
+		04511BC417E8543700A5498E /* myTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTableRowView.h; sourceTree = "<group>"; };
+		04511BC517E8543700A5498E /* myTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTableRowView.m; sourceTree = "<group>"; };
+		04511BC717E8A7AD00A5498E /* start-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-highlight.png"; sourceTree = "<group>"; };
+		04511BC917E8AD1D00A5498E /* preset-file-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "preset-file-icon.icns"; sourceTree = "<group>"; };
 		04777F1217DF12FE00DC2790 /* sshConfigPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sshConfigPanel.xib; sourceTree = "<group>"; };
 		04777F1917DF1D6C00DC2790 /* sshConfigPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sshConfigPanelController.h; sourceTree = "<group>"; };
 		04777F1A17DF1D6C00DC2790 /* sshConfigPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sshConfigPanelController.m; sourceTree = "<group>"; };
@@ -96,6 +147,19 @@
 		04928C6517DAD87900F0D829 /* myTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTableView.m; sourceTree = "<group>"; };
 		04928C6717DAE37A00F0D829 /* myTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTableCellView.h; sourceTree = "<group>"; };
 		04928C6817DAE37A00F0D829 /* myTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTableCellView.m; sourceTree = "<group>"; };
+		0493FC8B17E9694B00771582 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		0493FC8C17E9694B00771582 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		0493FC8F17E9A0EE00771582 /* progress-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-0.png"; sourceTree = "<group>"; };
+		0493FC9017E9A0EE00771582 /* progress-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-1.png"; sourceTree = "<group>"; };
+		0493FC9117E9A0EE00771582 /* progress-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-10.png"; sourceTree = "<group>"; };
+		0493FC9217E9A0EE00771582 /* progress-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-2.png"; sourceTree = "<group>"; };
+		0493FC9317E9A0EE00771582 /* progress-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-3.png"; sourceTree = "<group>"; };
+		0493FC9417E9A0EE00771582 /* progress-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-4.png"; sourceTree = "<group>"; };
+		0493FC9517E9A0EE00771582 /* progress-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-5.png"; sourceTree = "<group>"; };
+		0493FC9617E9A0EE00771582 /* progress-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-6.png"; sourceTree = "<group>"; };
+		0493FC9717E9A0EE00771582 /* progress-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-7.png"; sourceTree = "<group>"; };
+		0493FC9817E9A0EE00771582 /* progress-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-8.png"; sourceTree = "<group>"; };
+		0493FC9917E9A0EE00771582 /* progress-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-9.png"; sourceTree = "<group>"; };
 		04ACE98117E59761001A136C /* status-bar-connecting-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-bar-connecting-1.png"; sourceTree = "<group>"; };
 		04ACE98217E59761001A136C /* status-bar-connecting-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-bar-connecting-2.png"; sourceTree = "<group>"; };
 		04ACE98317E59761001A136C /* status-bar-connecting-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-bar-connecting-3.png"; sourceTree = "<group>"; };
@@ -161,9 +225,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04511BC317E8541000A5498E /* myTableView */ = {
+			isa = PBXGroup;
+			children = (
+				04928C6717DAE37A00F0D829 /* myTableCellView.h */,
+				04928C6817DAE37A00F0D829 /* myTableCellView.m */,
+				04928C6417DAD87900F0D829 /* myTableView.h */,
+				04928C6517DAD87900F0D829 /* myTableView.m */,
+				04511BC417E8543700A5498E /* myTableRowView.h */,
+				04511BC517E8543700A5498E /* myTableRowView.m */,
+			);
+			name = myTableView;
+			sourceTree = "<group>";
+		};
+		0493FC8E17E9A0EE00771582 /* progress */ = {
+			isa = PBXGroup;
+			children = (
+				0493FC8F17E9A0EE00771582 /* progress-0.png */,
+				0493FC9017E9A0EE00771582 /* progress-1.png */,
+				0493FC9117E9A0EE00771582 /* progress-10.png */,
+				0493FC9217E9A0EE00771582 /* progress-2.png */,
+				0493FC9317E9A0EE00771582 /* progress-3.png */,
+				0493FC9417E9A0EE00771582 /* progress-4.png */,
+				0493FC9517E9A0EE00771582 /* progress-5.png */,
+				0493FC9617E9A0EE00771582 /* progress-6.png */,
+				0493FC9717E9A0EE00771582 /* progress-7.png */,
+				0493FC9817E9A0EE00771582 /* progress-8.png */,
+				0493FC9917E9A0EE00771582 /* progress-9.png */,
+			);
+			path = progress;
+			sourceTree = "<group>";
+		};
 		04C30B8A17E16F58004C8DEB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0493FC8E17E9A0EE00771582 /* progress */,
+				0439337D17E953AE00615C89 /* big_noodle_titling_oblique.ttf */,
+				0439337E17E953AE00615C89 /* big_noodle_titling.ttf */,
+				04511BC917E8AD1D00A5498E /* preset-file-icon.icns */,
+				04511BAB17E8139700A5498E /* close-highlight.png */,
+				04511BAC17E8139700A5498E /* close-normal.png */,
+				04511BAD17E8139700A5498E /* cancel-highlight.png */,
+				04511BAE17E8139700A5498E /* cancel-normal.png */,
+				04511BAF17E8139700A5498E /* save-highlight.png */,
+				04511BB017E8139700A5498E /* save-normal.png */,
+				04511BB117E8139700A5498E /* edit-highlight.png */,
+				04511BB217E8139700A5498E /* edit-normal.png */,
+				04511BB317E8139700A5498E /* delete-highlight.png */,
+				04511BB417E8139700A5498E /* delete-normal.png */,
+				04511BB517E8139700A5498E /* connect-highlight.png */,
+				04511BB617E8139700A5498E /* connect-normal.png */,
+				04511BA717E80DCE00A5498E /* start-at-login-highlight.png */,
+				04511BA817E80DCE00A5498E /* start-at-login-normal.png */,
+				04511BA517E7F0DE00A5498E /* open-at-login-en.png */,
+				04511BA317E7F07F00A5498E /* open-at-login-zh.png */,
 				0442B5AE17E70E300053C366 /* preset-list-border.png */,
 				04ACE99D17E5FFC4001A136C /* status-bar-connected.png */,
 				04ACE99917E5FB32001A136C /* ICON 2.icns */,
@@ -197,7 +312,7 @@
 				043A952D17D994A90019CD1A /* pull-down.png */,
 				043A952817D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png */,
 				043A952917D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png */,
-				043A953417D9A3ED0019CD1A /* start-highlight.png */,
+				04511BC717E8A7AD00A5498E /* start-highlight.png */,
 				043A953517D9A3ED0019CD1A /* start-normal.png */,
 				04F0022717D8CE5E00749E05 /* tabs_01.png */,
 				04F0022817D8CE5E00749E05 /* tabs_02.png */,
@@ -254,14 +369,13 @@
 				04C30B9617E191C3004C8DEB /* ssh_interface.m */,
 				04C30B9717E191C3004C8DEB /* TaskWrapper.h */,
 				04C30B9817E191C3004C8DEB /* TaskWrapper.m */,
+				0493FC8B17E9694B00771582 /* SimplePing.h */,
+				0493FC8C17E9694B00771582 /* SimplePing.m */,
 				04C30B8A17E16F58004C8DEB /* Resource */,
 				04F0020B17D87EFD00749E05 /* AppDelegate.h */,
 				04F0020C17D87EFD00749E05 /* AppDelegate.m */,
 				04F0020E17D87EFD00749E05 /* MainMenu.xib */,
-				04928C6717DAE37A00F0D829 /* myTableCellView.h */,
-				04928C6817DAE37A00F0D829 /* myTableCellView.m */,
-				04928C6417DAD87900F0D829 /* myTableView.h */,
-				04928C6517DAD87900F0D829 /* myTableView.m */,
+				04511BC317E8541000A5498E /* myTableView */,
 				0422DDC817D9DEAD003F5D23 /* presetManager.h */,
 				0422DDC917D9DEAD003F5D23 /* presetManager.m */,
 				043A952517D9845D0019CD1A /* sshConfig.h */,
@@ -359,7 +473,6 @@
 				043A952F17D994A90019CD1A /* pull-down.png in Resources */,
 				043A953117D99F020019CD1A /* pull-down-orange.png in Resources */,
 				043A953317D9A16E0019CD1A /* loading.gif in Resources */,
-				043A953617D9A3ED0019CD1A /* start-highlight.png in Resources */,
 				043A953717D9A3ED0019CD1A /* start-normal.png in Resources */,
 				0422DDC217D9B71A003F5D23 /* ICON.png in Resources */,
 				0422DDC417D9B739003F5D23 /* ICON.icns in Resources */,
@@ -390,6 +503,35 @@
 				04ACE99A17E5FB32001A136C /* ICON 2.icns in Resources */,
 				04ACE99E17E5FFC4001A136C /* status-bar-connected.png in Resources */,
 				0442B5AF17E70E300053C366 /* preset-list-border.png in Resources */,
+				04511BA417E7F07F00A5498E /* open-at-login-zh.png in Resources */,
+				04511BA617E7F0DE00A5498E /* open-at-login-en.png in Resources */,
+				04511BA917E80DCE00A5498E /* start-at-login-highlight.png in Resources */,
+				04511BAA17E80DCE00A5498E /* start-at-login-normal.png in Resources */,
+				04511BB717E8139700A5498E /* close-highlight.png in Resources */,
+				04511BB817E8139700A5498E /* close-normal.png in Resources */,
+				04511BB917E8139700A5498E /* cancel-highlight.png in Resources */,
+				04511BBA17E8139700A5498E /* cancel-normal.png in Resources */,
+				04511BBB17E8139700A5498E /* save-highlight.png in Resources */,
+				04511BBC17E8139700A5498E /* save-normal.png in Resources */,
+				04511BBD17E8139700A5498E /* edit-highlight.png in Resources */,
+				04511BBE17E8139700A5498E /* edit-normal.png in Resources */,
+				04511BBF17E8139700A5498E /* delete-highlight.png in Resources */,
+				04511BC017E8139700A5498E /* delete-normal.png in Resources */,
+				04511BC117E8139700A5498E /* connect-highlight.png in Resources */,
+				04511BC217E8139700A5498E /* connect-normal.png in Resources */,
+				04511BC817E8A7AD00A5498E /* start-highlight.png in Resources */,
+				04511BCA17E8AD1D00A5498E /* preset-file-icon.icns in Resources */,
+				0493FC9A17E9A0EE00771582 /* progress-0.png in Resources */,
+				0493FC9B17E9A0EE00771582 /* progress-1.png in Resources */,
+				0493FC9C17E9A0EE00771582 /* progress-10.png in Resources */,
+				0493FC9D17E9A0EE00771582 /* progress-2.png in Resources */,
+				0493FC9E17E9A0EE00771582 /* progress-3.png in Resources */,
+				0493FC9F17E9A0EE00771582 /* progress-4.png in Resources */,
+				0493FCA017E9A0EE00771582 /* progress-5.png in Resources */,
+				0493FCA117E9A0EE00771582 /* progress-6.png in Resources */,
+				0493FCA217E9A0EE00771582 /* progress-7.png in Resources */,
+				0493FCA317E9A0EE00771582 /* progress-8.png in Resources */,
+				0493FCA417E9A0EE00771582 /* progress-9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +554,8 @@
 				04B440E217E1A906009A59A8 /* TaskWrapper.m in Sources */,
 				04B440E317E1A917009A59A8 /* ssh_interface.m in Sources */,
 				04790FC217E334A60003B26E /* SecretSocksController.m in Sources */,
+				04511BC617E8543700A5498E /* myTableRowView.m in Sources */,
+				0493FC8D17E9694B00771582 /* SimplePing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

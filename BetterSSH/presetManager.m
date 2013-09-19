@@ -7,6 +7,9 @@
 //
 
 #import "presetManager.h"
+#include <sys/socket.h>
+#include <netdb.h>
+
 
 @interface presetManager()
 
@@ -48,6 +51,9 @@ sshConfig *_newConfigToSave;
         
         //Initial preset editing panel
         self.editPresetConfigController = [[sshConfigPanelController alloc] init];
+        orangeColor = [NSColor colorWithCalibratedRed:0.82 green:0.337 blue:0.102 alpha:1];
+        darkColor = [NSColor colorWithSRGBRed:0.1529 green:0.1529 blue:0.1529 alpha:1];
+    
         
         if(!sheet){
             [NSBundle loadNibNamed:@"sshConfigSheet" owner:self];
@@ -93,6 +99,7 @@ sshConfig *_newConfigToSave;
     
     [self.saveButton setEnabled:isEditingMode];
     [self.cancelButton setEnabled:isEditingMode];
+
     
     self.editPresetConfigController.isEditable = isEditingMode;
 
@@ -126,6 +133,7 @@ sshConfig *_newConfigToSave;
 -(void)deleteAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode{
 
     NSLog(@"-deleteAlertDidEnd returnCode = %ld",(long)returnCode);
+    
     
 
 }
@@ -181,6 +189,7 @@ sshConfig *_newConfigToSave;
     _newConfigToSave = nil;
 }
 
+
 - (IBAction)ExpandingButtonClicked:(id)sender {
 }
 
@@ -230,33 +239,35 @@ sshConfig *_newConfigToSave;
 }
 
 
+-(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    
+    return _presetList[row];
+
+
+}
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     
-    
+    //NSLog(@"tableView");
     sshConfig *config = _presetList[row];
     
-    NSString *identifier = [tableColumn identifier];
-    if([identifier isEqualToString:@"presetItem"]){
-        
-        NSTableCellView *cellview = [tableView makeViewWithIdentifier:@"presetItem" owner:self];
-        
-        //Display hostname on the list.
-        [cellview.textField setStringValue:config.presetName];
-        
-        //Add context menu to list item
-//        NSZone *menuZone = [NSMenu menuZone];
-//        NSMenu *menu = [[NSMenu allocWithZone:menuZone]init];
-//        NSMenuItem *menuItem;
-//        menuItem = [menu addItemWithTitle:@"Edit" action:@selector(editPreset:) keyEquivalent:@""];
-//        [menuItem setTarget:self];
-//        cellview.menu = menu;
-        
-        return cellview;
+    myTableCellView *cellview = [tableView makeViewWithIdentifier:@"presetItem" owner:[NSApp delegate]];
+    
+    //Display hostname on the list.
+    [cellview.textField setStringValue:config.presetName];
+    [cellview setObjectValue:config];
+    [cellview setProgressValue:[NSNumber numberWithInteger:config.pingTime]];
+
+    if(!cellArray){
+    
+        cellArray = [[NSMutableArray alloc]init];
         
     }
     
-    return nil;
+    
+    [cellArray addObject:cellview];
+    
+    return cellview;
 
 }
 
@@ -264,18 +275,32 @@ sshConfig *_newConfigToSave;
 
 -(void)tableViewSelectionDidChange:(NSNotification *)notification{
 
-    myTableView *table = [notification object];
-    if(lastSelectedCell){
-        lastSelectedCell.isSelected = FALSE;
-    }
-    myTableCellView *selectedCell = table.selectedCell;
     
-    selectedCell.isSelected = TRUE;
+    NSLog(@"tableViewSelectionDidChange");
+    //myTableView *table = [notification object];
     
-    lastSelectedCell = selectedCell;
+//
+//    if(lastSelectedCell){
+//        lastSelectedCell.textField.textColor = orangeColor;
+//    }
+//    
+//    myTableCellView *selectedCell = table.selectedCell;
+//    
+//    selectedCell.isSelected = TRUE;
+//    selectedCell.textField.textColor = darkColor;
+//    
+//    lastSelectedCell = selectedCell;
 
     
     
+}
+
+-(NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row{
+
+    myTableRowView *rowView = [[myTableRowView alloc] initWithFrame:NSMakeRect(0, 0, 100, 50)];
+    
+    return rowView;
+
 }
 
 
@@ -389,8 +414,6 @@ sshConfig *_newConfigToSave;
 
 
 -(void)savePresetsToFile{
-//TODO: IMPLEMENT SAVE PRESETS INTO PROPERTY LIST FILE.
-    
 
     NSArray *presetListForXmlData = [self convertSshConfigListToDictionaryList:_presetList];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"presets" ofType:@"plist"];
@@ -454,6 +477,377 @@ sshConfig *_newConfigToSave;
     
     
 
+}
+
+- (BOOL)importPresets:(out NSString *)error{
+    
+    NSOpenPanel *openDialog = [NSOpenPanel openPanel];
+//    [openDialog setDelegate:self];
+    [openDialog setCanChooseFiles:YES];
+    [openDialog setCanChooseDirectories:NO];
+    [openDialog setAllowsMultipleSelection:NO];
+    [openDialog setAllowedFileTypes:[[NSArray alloc] initWithObjects:@"bspresets",@"BSPRESETS",nil]];
+
+    
+    if([openDialog runModal]==NSOKButton){
+        
+        //TODO: import presets
+        
+        
+        NSMutableArray *_presetsFromFile = [[NSMutableArray alloc]init];
+        
+        NSURL *path = [openDialog URL];
+        NSData *plistData = [NSData dataWithContentsOfURL:path];
+        if(!plistData){
+            
+            //throw error
+            error = @"FILE IS EMPTY";
+            return FALSE;
+            
+        }
+        
+        //NSString *error;
+        
+        NSPropertyListFormat format;
+        
+        NSArray *plist = [NSPropertyListSerialization propertyListFromData:plistData mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];
+        
+        if(error){
+            return FALSE;
+        }
+        
+        _presetsFromFile = [self convertDictionaryListToSshConfigList:plist];
+        
+        if(_presetsFromFile){
+            [_presetList addObjectsFromArray:_presetsFromFile];
+        }
+        
+        [self.presetTebleView reloadData];
+        
+        [self savePresetsToFile];
+        
+        return TRUE;
+        //return _presetsFromFile;
+    
+        
+    
+    }
+    
+    return FALSE;
+
+}
+
+- (BOOL)exportPresets:(out NSString *)error{
+    
+    NSSavePanel *savePanel = [[NSSavePanel alloc]init];
+    
+    [savePanel setAllowedFileTypes:[[NSArray alloc] initWithObjects:@"bspresets",nil]];
+    
+    if([savePanel runModal]==NSOKButton){
+    
+        
+        NSArray *presetListForXmlData = [self convertSshConfigListToDictionaryList:_presetList];
+        NSURL *path = [savePanel URL];
+        NSData *xmlData;
+
+        xmlData = [NSPropertyListSerialization dataFromPropertyList:(id)presetListForXmlData format:NSPropertyListBinaryFormat_v1_0 errorDescription:&error];
+        
+        if(xmlData){
+            //write xmlData into file.
+            NSLog(@"Writing xml data into file.");
+            [xmlData writeToURL:path atomically:YES];
+            NSLog(@"Done writing xml data.");
+            return TRUE;
+        }
+        else{
+            
+            return FALSE;
+            //NSLog(@"Error occurs when trying to write xml data into property list file. \nError: %@",error);
+            
+        }
+        
+    
+    }
+    return FALSE;
+    
+
+
+}
+
+
+-(BOOL)panel:(id)sender shouldShowFilename:(NSString *)filename{
+    
+    NSString* ext = [filename pathExtension];
+    if ([ext isEqual: @""] || [ext isEqual: @"/"] || ext == nil || ext == NULL || [ext length] < 1) {
+        return TRUE;
+    }
+    
+    NSLog(@"Ext: '%@'", ext);
+    
+    if([ext caseInsensitiveCompare:@"bspreset"]){
+        return TRUE;
+    }
+    
+
+//    NSEnumerator* tagEnumerator = [[NSArray arrayWithObjects:@"png", @"tiff", @"jpg", @"gif", @"jpeg", nil] objectEnumerator];
+//    NSString* allowedExt;
+//    while ((allowedExt = [tagEnumerator nextObject]))
+//    {
+//        if ([ext caseInsensitiveCompare:allowedExt] == NSOrderedSame)
+//        {
+//            return TRUE;
+//        }
+//    }
+
+    
+    return FALSE;
+}
+
+
+#pragma mark - SimplePing
+
+static NSString * DisplayAddressForAddress(NSData * address)
+// Returns a dotted decimal string for the specified address (a (struct sockaddr)
+// within the address NSData).
+{
+    int         err;
+    NSString *  result;
+    char        hostStr[NI_MAXHOST];
+    
+    result = nil;
+    
+    if (address != nil) {
+        err = getnameinfo([address bytes], (socklen_t) [address length], hostStr, sizeof(hostStr), NULL, 0, NI_NUMERICHOST);
+        if (err == 0) {
+            result = [NSString stringWithCString:hostStr encoding:NSASCIIStringEncoding];
+            assert(result != nil);
+        }
+    }
+    
+    return result;
+}
+
+- (NSString *)shortErrorFromError:(NSError *)error
+// Given an NSError, returns a short error string that we can print, handling
+// some special cases along the way.
+{
+    NSString *      result;
+    NSNumber *      failureNum;
+    int             failure;
+    const char *    failureStr;
+    
+    assert(error != nil);
+    
+    result = nil;
+    
+    // Handle DNS errors as a special case.
+    
+    if ( [[error domain] isEqual:(NSString *)kCFErrorDomainCFNetwork] && ([error code] == kCFHostErrorUnknown) ) {
+        failureNum = [[error userInfo] objectForKey:(id)kCFGetAddrInfoFailureKey];
+        if ( [failureNum isKindOfClass:[NSNumber class]] ) {
+            failure = [failureNum intValue];
+            if (failure != 0) {
+                failureStr = gai_strerror(failure);
+                if (failureStr != NULL) {
+                    result = [NSString stringWithUTF8String:failureStr];
+                    assert(result != nil);
+                }
+            }
+        }
+    }
+    
+    // Otherwise try various properties of the error object.
+    
+    if (result == nil) {
+        result = [error localizedFailureReason];
+    }
+    if (result == nil) {
+        result = [error localizedDescription];
+    }
+    if (result == nil) {
+        result = [error description];
+    }
+    assert(result != nil);
+    return result;
+}
+
+
+int rand_range(int min_n, int max_n)
+{
+    return rand() % (max_n - min_n + 1) + min_n;
+}
+
+- (IBAction)pingServersClicked:(id)sender{
+    
+    //    for(NSInteger i = 0; i<[_presetList count];i++){
+    //
+    //        ((sshConfig *)_presetList[i]).pingTime = rand_range(0, 10);
+    //        [self.presetTebleView reloadDataForRowIndexes:[[NSIndexSet alloc]initWithIndex:i] columnIndexes:[[NSIndexSet alloc]initWithIndex:0]];
+    //
+    //    }
+    //
+    //    return;
+    
+    
+    currentPingingPresetIndex = 0;
+    self.pinger = [SimplePing simplePingWithHostName:[(sshConfig *)_presetList[currentPingingPresetIndex] hostName]];
+    self.pinger.delegate = self;
+    pingCounter = 0;
+    [self.pinger start];
+    
+    
+    
+    
+}
+
+
+// Called to send a ping, both directly (as soon as the SimplePing object starts up)
+// and via a timer (to continue sending pings periodically).
+- (void)sendPing
+{
+    if(pingCounter>=4){
+    
+        if(currentPingingPresetIndex<[_presetList count]){
+            //还没全部Ping完
+            //开始ping下一个
+            pingCounter = 1;
+            currentPingingPresetIndex ++;
+            
+            
+            [self.pinger stop];
+            
+            
+            //Start pinging next Server with a new Pinger.
+            self.pinger = [SimplePing simplePingWithHostName:[(sshConfig *)_presetList[currentPingingPresetIndex] hostName]];
+            self.pinger.delegate = self;
+            pingCounter = 0;
+            [self.pinger start];
+            return;
+            
+        }
+        else{
+            
+            //全部Ping完了
+            [self.sendTimer invalidate];
+            self.sendTimer = nil;
+            [self.pinger stop];
+            return;
+        
+        }
+        
+
+    }
+    
+    
+    
+    assert(self.pinger != nil);
+
+    [self.pinger sendPingWithData:nil];
+    pingCounter++;
+    
+}
+
+
+// A SimplePing delegate callback method.  We respond to the startup by sending a
+// ping immediately and starting a timer to continue sending them every second.
+- (void)simplePing:(SimplePing *)pinger didStartWithAddress:(NSData *)address
+
+{
+#pragma unused(pinger)
+    assert(pinger == self.pinger);
+    assert(address != nil);
+    
+    NSLog(@"pinging %@", DisplayAddressForAddress(address));
+    
+    // Send the first ping straight away.
+    
+    [self sendPing];
+    
+    // And start a timer to send the subsequent pings.
+    
+    assert(self.sendTimer == nil);
+    self.sendTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sendPing) userInfo:nil repeats:YES];
+    
+}
+
+
+// A SimplePing delegate callback method.  We shut down our timer and the
+// SimplePing object itself, which causes the runloop code to exit.
+- (void)simplePing:(SimplePing *)pinger didFailWithError:(NSError *)error
+{
+#pragma unused(pinger)
+    assert(pinger == self.pinger);
+#pragma unused(error)
+    NSLog(@"failed: %@", [self shortErrorFromError:error]);
+    
+    [self.sendTimer invalidate];
+    self.sendTimer = nil;
+    
+    // No need to call -stop.  The pinger will stop itself in this case.
+    // We do however want to nil out pinger so that the runloop stops.
+    
+    self.pinger = nil;
+}
+
+
+
+
+// A SimplePing delegate callback method.  We just log the send.
+- (void)simplePing:(SimplePing *)pinger didSendPacket:(NSData *)packet
+{
+#pragma unused(pinger)
+    assert(pinger == self.pinger);
+#pragma unused(packet)
+    
+    startPingTime = [NSDate date];
+    NSLog(@"#%u sent", (unsigned int) OSSwapBigToHostInt16(((const ICMPHeader *) [packet bytes])->sequenceNumber) );
+}
+
+
+
+
+
+// A SimplePing delegate callback method.  We just log the failure.
+- (void)simplePing:(SimplePing *)pinger didFailToSendPacket:(NSData *)packet error:(NSError *)error
+{
+#pragma unused(pinger)
+    assert(pinger == self.pinger);
+#pragma unused(packet)
+#pragma unused(error)
+    NSLog(@"#%u send failed: %@", (unsigned int) OSSwapBigToHostInt16(((const ICMPHeader *) [packet bytes])->sequenceNumber), [self shortErrorFromError:error]);
+}
+
+
+
+
+// A SimplePing delegate callback method.  We just log the reception of a ping response.
+- (void)simplePing:(SimplePing *)pinger didReceivePingResponsePacket:(NSData *)packet
+{
+#pragma unused(pinger)
+    assert(pinger == self.pinger);
+#pragma unused(packet)
+    
+    NSTimeInterval duration = [startPingTime timeIntervalSinceNow];
+    NSLog(@"#%u received, time = %f ms", (unsigned int) OSSwapBigToHostInt16([SimplePing icmpInPacket:packet]->sequenceNumber),duration*-1000 );
+    
+}
+
+
+// A SimplePing delegate callback method.  We just log the receive.
+- (void)simplePing:(SimplePing *)pinger didReceiveUnexpectedPacket:(NSData *)packet
+{
+    const ICMPHeader *  icmpPtr;
+    
+#pragma unused(pinger)
+    assert(pinger == self.pinger);
+#pragma unused(packet)
+    
+    icmpPtr = [SimplePing icmpInPacket:packet];
+    if (icmpPtr != NULL) {
+        NSLog(@"#%u unexpected ICMP type=%u, code=%u, identifier=%u", (unsigned int) OSSwapBigToHostInt16(icmpPtr->sequenceNumber), (unsigned int) icmpPtr->type, (unsigned int) icmpPtr->code, (unsigned int) OSSwapBigToHostInt16(icmpPtr->identifier) );
+    } else {
+        NSLog(@"unexpected packet size=%zu", (size_t) [packet length]);
+    }
 }
 
 
