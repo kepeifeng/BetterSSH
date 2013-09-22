@@ -40,5 +40,11 @@ Once you used ssh-socks to connect to proxy server. You will see the significant
 9. Auto-connect to proxy server when application started.(optional)
 
 
+## Feedback
+Any Suggestion and Feedback are welcome. Please let me know how does Better-SSH run on your machine and how does it helps.
+Email:    kepeifeng@gmail.com
+Twitter:  @strKent
+Facebook: https://www.facebook.com/kepeifeng
+
 
 
