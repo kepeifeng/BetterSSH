@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterSSH/presetManager.m"
-            timestampString = "401518268.492693"
+            timestampString = "401530546.129092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "818"
-            endingLineNumber = "818"
+            startingLineNumber = "841"
+            endingLineNumber = "841"
             landmarkName = "-simplePing:didSendPacket:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterSSH/presetManager.m"
-            timestampString = "401517160.146621"
+            timestampString = "401530546.129092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "757"
-            endingLineNumber = "757"
+            startingLineNumber = "780"
+            endingLineNumber = "780"
             landmarkName = "-sendPing"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterSSH/presetManager.m"
-            timestampString = "401517160.146621"
+            timestampString = "401530546.129092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "758"
-            endingLineNumber = "758"
+            startingLineNumber = "781"
+            endingLineNumber = "781"
             landmarkName = "-sendPing"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterSSH/presetManager.m"
-            timestampString = "401518268.492693"
+            timestampString = "401530546.129092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "887"
-            endingLineNumber = "887"
+            startingLineNumber = "910"
+            endingLineNumber = "910"
             landmarkName = "-simplePing:didTimeoutWaitingForResponsePacket:"
             landmarkType = "5">
          </BreakpointContent>

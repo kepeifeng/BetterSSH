@@ -45,6 +45,8 @@
     
     IBOutlet NSButton *expandingButton;
     
+   
+    
     NSInteger currentFrame;
     NSTimer* animTimer;
     
@@ -84,6 +86,8 @@
 - (IBAction)exportPresetsClicked:(id)sender;
 
 - (IBAction)doConnect:(id)sender;
+
+
 - (void)toggleSOCKSSetting:(bool)status;
 - (void)loadPrefs;
 - (void)savePrefs;

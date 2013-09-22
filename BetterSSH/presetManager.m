@@ -126,13 +126,24 @@ sshConfig *_newConfigToSave;
     
     deleteAlert.messageText = @"Detele this preset?";
     
-    [deleteAlert beginSheetModalForWindow:sheet modalDelegate:self didEndSelector:@selector(deleteAlertDidEnd:) contextInfo:nil];
+    [deleteAlert beginSheetModalForWindow:sheet modalDelegate:self didEndSelector:@selector(deleteAlertDidEnd:returnCode:) contextInfo:nil];
     
     
 }
 
 -(void)deleteAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode{
 
+    
+    //OK button clicked
+    if(returnCode == 1000){
+        
+        [_presetList removeObject:self.openedPreset];
+        [self savePresetsToFile];
+        [self.presetTebleView reloadData];
+        [self exitEditingMode];
+        [self closeSheet];
+        
+    }
     NSLog(@"-deleteAlertDidEnd returnCode = %ld",(long)returnCode);
     
     
@@ -156,7 +167,10 @@ sshConfig *_newConfigToSave;
 
 - (IBAction)savePresetClicked:(id)sender {
     
+    [_presetList replaceObjectAtIndex:[_presetList indexOfObject:self.openedPreset] withObject:self.editPresetConfigController.configuration];
+    [self savePresetsToFile];
     [self exitEditingMode];
+    
 }
 
 - (IBAction)cancelEditingClicked:(id)sender {
@@ -337,6 +351,7 @@ sshConfig *_newConfigToSave;
         [closeAlert beginSheetModalForWindow:sheet
                                modalDelegate:self didEndSelector:@selector(closeAlertDidEnd:) contextInfo:NULL];
         
+        return;
     
     }
 
@@ -720,6 +735,14 @@ int rand_range(int min_n, int max_n)
     
 
     
+    [self.pingButton setEnabled:FALSE];
+    
+    [self.pingProgressIndicator setMinValue:0];
+    [self.pingProgressIndicator setMaxValue:self.presets.count];
+    [self.pingProgressIndicator setDoubleValue:0];
+    [self.pingProgressIndicator setHidden:FALSE];
+    [self.pingProgressIndicator startAnimation:self];
+    [self.pingProgressIndicator incrementBy:1];
     
 	totalPingTime = 0;
     currentPingingPresetIndex = 0;
@@ -905,7 +928,7 @@ int rand_range(int min_n, int max_n)
         //开始ping下一个
         currentPingingPresetIndex ++;
         
-        
+        [self.pingProgressIndicator incrementBy:1];
  
         totalPingTime = 0;
         //Start pinging next Server with a new Pinger.
@@ -922,6 +945,9 @@ int rand_range(int min_n, int max_n)
         //全部Ping完了
 
 		//TODO:stop processing indicator
+        [self.pingProgressIndicator stopAnimation:self];
+        [self.pingProgressIndicator setHidden:TRUE];
+        [self.pingButton setEnabled:TRUE];
         return;
     
     }

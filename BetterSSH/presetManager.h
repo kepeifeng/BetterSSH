@@ -23,6 +23,8 @@
     IBOutlet NSView *sshPresetEditPanel;
     IBOutlet NSWindow *newPresetSheet;
     IBOutlet NSTextField *newPresetName;
+    
+    
     NSColor *orangeColor;
     NSColor *darkColor;
     NSDate *startPingTime;
@@ -69,6 +71,10 @@
 @property (weak) IBOutlet NSButton *connectButton;
 @property (weak) IBOutlet NSButton *deleteButton;
 @property (weak) IBOutlet NSButton *closeButton;
+@property (weak) IBOutlet NSButton *pingButton;
+@property (weak) IBOutlet NSProgressIndicator *pingProgressIndicator;
+
+
 
 
 @property (nonatomic, strong, readwrite) SimplePing *   pinger;

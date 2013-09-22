@@ -97,7 +97,11 @@
 		04F0022E17D8CE5E00749E05 /* tabs_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022817D8CE5E00749E05 /* tabs_02.png */; };
 		04F0023017D8CE5E00749E05 /* tabs_highlight_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */; };
 		04F0023117D8CE5E00749E05 /* tabs_highlight_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */; };
+		3771662017EEB70A0069AABC /* myLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3771661F17EEB70A0069AABC /* myLabel.m */; };
+		3771662317EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3771662217EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m */; };
 		3774321517EE9C410083F32D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774321417EE9C410083F32D /* SystemConfiguration.framework */; };
+		3774321617EEB2BE0083F32D /* big_noodle_titling_oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0439337D17E953AE00615C89 /* big_noodle_titling_oblique.ttf */; };
+		3774321717EEB2BE0083F32D /* big_noodle_titling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0439337E17E953AE00615C89 /* big_noodle_titling.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +216,10 @@
 		04F0022817D8CE5E00749E05 /* tabs_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_02.png; path = ../tabs_02.png; sourceTree = "<group>"; };
 		04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_01.png; path = ../tabs_highlight_01.png; sourceTree = "<group>"; };
 		04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_02.png; path = ../tabs_highlight_02.png; sourceTree = "<group>"; };
+		3771661E17EEB70A0069AABC /* myLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myLabel.h; sourceTree = "<group>"; };
+		3771661F17EEB70A0069AABC /* myLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myLabel.m; sourceTree = "<group>"; };
+		3771662117EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSVerticallyCenteredTextFieldCell.h; sourceTree = "<group>"; };
+		3771662217EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSVerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
 		3774321417EE9C410083F32D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -392,7 +400,11 @@
 				0422DDC617D9B9A9003F5D23 /* sshController.m */,
 				04F0021617D88A2000749E05 /* startButton.h */,
 				04F0021717D88A2000749E05 /* startButton.m */,
+				3771662117EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.h */,
+				3771662217EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m */,
 				04F0020017D87EFD00749E05 /* Supporting Files */,
+				3771661E17EEB70A0069AABC /* myLabel.h */,
+				3771661F17EEB70A0069AABC /* myLabel.m */,
 			);
 			path = BetterSSH;
 			sourceTree = "<group>";
@@ -472,6 +484,7 @@
 				04F0023017D8CE5E00749E05 /* tabs_highlight_01.png in Resources */,
 				04F0023117D8CE5E00749E05 /* tabs_highlight_02.png in Resources */,
 				043A952A17D990940019CD1A /* SAVE-AS-PRESET-HIGHLIGHT.png in Resources */,
+				3774321717EEB2BE0083F32D /* big_noodle_titling.ttf in Resources */,
 				043A952B17D990940019CD1A /* SAVE-AS-PRESET-NORMAL.png in Resources */,
 				043A952E17D994A90019CD1A /* pull-down-hl.png in Resources */,
 				043A952F17D994A90019CD1A /* pull-down.png in Resources */,
@@ -511,6 +524,7 @@
 				04511BA617E7F0DE00A5498E /* open-at-login-en.png in Resources */,
 				04511BA917E80DCE00A5498E /* start-at-login-highlight.png in Resources */,
 				04511BAA17E80DCE00A5498E /* start-at-login-normal.png in Resources */,
+				3774321617EEB2BE0083F32D /* big_noodle_titling_oblique.ttf in Resources */,
 				04511BB717E8139700A5498E /* close-highlight.png in Resources */,
 				04511BB817E8139700A5498E /* close-normal.png in Resources */,
 				04511BB917E8139700A5498E /* cancel-highlight.png in Resources */,
@@ -554,10 +568,12 @@
 				0422DDCA17D9DEAD003F5D23 /* presetManager.m in Sources */,
 				04928C6617DAD87900F0D829 /* myTableView.m in Sources */,
 				04928C6917DAE37A00F0D829 /* myTableCellView.m in Sources */,
+				3771662017EEB70A0069AABC /* myLabel.m in Sources */,
 				04777F1B17DF1D6C00DC2790 /* sshConfigPanelController.m in Sources */,
 				04B440E217E1A906009A59A8 /* TaskWrapper.m in Sources */,
 				04B440E317E1A917009A59A8 /* ssh_interface.m in Sources */,
 				04790FC217E334A60003B26E /* SecretSocksController.m in Sources */,
+				3771662317EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 				04511BC617E8543700A5498E /* myTableRowView.m in Sources */,
 				0493FC8D17E9694B00771582 /* SimplePing.m in Sources */,
 			);
