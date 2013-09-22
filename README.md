@@ -9,11 +9,11 @@ BetterSSH is the best ssh socks proxy client on the world.
 
 ## Why use BetterSSH?
 ### Simple and Functional
-*BetterSSH is designed to be a functional application. Yet, it's also simple and easy to use.
+* BetterSSH is designed to be a functional application. Yet, it's also simple and easy to use.
 
 ### Customizable
-*If you connect to proxy servers via VPN, all your requets will be send through VPN connection. 
-*If you use SSH socks to connect to proxy server. you can decide which requests should be send to remote proxy server and which don't. 
+* If you connect to proxy servers via VPN, all your requets will be send through VPN connection. 
+* If you use SSH socks to connect to proxy server. you can decide which requests should be send to remote proxy server and which don't. 
 
 ### Fast
 Connecting to proxy server by ssh-socks with white list is way faster than by VPN. Because only needed requests will be send to remote server. Which:
@@ -22,7 +22,8 @@ Connecting to proxy server by ssh-socks with white list is way faster than by VP
 * Requests that are not on the white list will be transmited through normal tunnel.
 
 ### Convenient
-Now you can stay connected to proxy all day long without keep turning VPN on and off. You can even auto connect to proxy server every time when you logged in to your computer. It's like a part of your system. 
+* Now you can stay connected to proxy all day long without keep turning VPN on and off. 
+* You can even auto connect to proxy server every time when you logged in to your computer. It's like a part of your system. 
 
 
 Once you used ssh-socks to connect to proxy server. You will see the significant difference between VPN connection and SSH socks connection.
@@ -42,9 +43,9 @@ Once you used ssh-socks to connect to proxy server. You will see the significant
 
 ## Feedback
 Any Suggestion and Feedback are welcome. Please let me know how does Better-SSH run on your machine and how does it helps.
-Email:    kepeifeng@gmail.com
-Twitter:  @strKent
-Facebook: https://www.facebook.com/kepeifeng
+* Email:		kepeifeng@gmail.com
+* Twitter:	@strKent
+* Facebook:	https://www.facebook.com/kepeifeng
 
 
 
