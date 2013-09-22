@@ -9,6 +9,7 @@
 #import "presetManager.h"
 #include <sys/socket.h>
 #include <netdb.h>
+#include <SystemConfiguration/SCNetworkReachability.h>
 
 
 @interface presetManager()
@@ -141,7 +142,9 @@ sshConfig *_newConfigToSave;
 - (IBAction)usePresetConfigToConnectClicked:(id)sender {
     
     [self closeSheetClicked:nil];
-    if(presetSelectedToConnectActionTarget && presetSelectedToConnectAction){
+    if(presetSelectedToConnectActionTarget && [presetSelectedToConnectActionTarget respondsToSelector:presetSelectedToConnectAction]){
+        //TODO: VALID SELECTOR
+        //[self.delegate respondsToSelector:@selector(simplePing:didTimeoutWaitingForResponsePacket:)]
         
         [presetSelectedToConnectActionTarget performSelector:presetSelectedToConnectAction withObject:self.presetSelectedToConnect];
     
@@ -256,7 +259,24 @@ sshConfig *_newConfigToSave;
     //Display hostname on the list.
     [cellview.textField setStringValue:config.presetName];
     [cellview setObjectValue:config];
-    [cellview setProgressValue:[NSNumber numberWithInteger:config.pingTime]];
+	
+	NSInteger progressValue = 0;
+	
+	if(config.pingTime == -1){
+		
+		progressValue = 0;
+	}
+	else if(config.pingTime >0 && config.pingTime <1000){
+		
+		progressValue = 10 - ((NSInteger)(config.pingTime / 100));
+		
+	}
+	else{
+		
+		progressValue = 0;
+	}
+	
+    [cellview setProgressValue:[NSNumber numberWithInteger:progressValue]];
 
     if(!cellArray){
     
@@ -678,26 +698,51 @@ int rand_range(int min_n, int max_n)
 }
 
 - (IBAction)pingServersClicked:(id)sender{
-    
-    //    for(NSInteger i = 0; i<[_presetList count];i++){
-    //
-    //        ((sshConfig *)_presetList[i]).pingTime = rand_range(0, 10);
-    //        [self.presetTebleView reloadDataForRowIndexes:[[NSIndexSet alloc]initWithIndex:i] columnIndexes:[[NSIndexSet alloc]initWithIndex:0]];
-    //
-    //    }
-    //
-    //    return;
+	
     
     
+    
+//    bool success = false;
+//    const char *host_name = [@"s1.123ssh.com"
+//                             cStringUsingEncoding:NSASCIIStringEncoding];
+//    
+//    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL,
+//                                                                                host_name);
+//    SCNetworkReachabilityFlags flags;
+//    success = SCNetworkReachabilityGetFlags(reachability, &flags);
+//    bool isAvailable = success && (flags & kSCNetworkFlagsReachable) &&
+//    !(flags & kSCNetworkFlagsConnectionRequired);
+//    if (isAvailable) {
+//        NSLog(@"Host is reachable: %d", flags);
+//    }else{
+//        NSLog(@"Host is unreachable");
+//    }
+    
+
+    
+    
+	totalPingTime = 0;
     currentPingingPresetIndex = 0;
     self.pinger = [SimplePing simplePingWithHostName:[(sshConfig *)_presetList[currentPingingPresetIndex] hostName]];
     self.pinger.delegate = self;
     pingCounter = 0;
+    self.pinger.timeOut = 2;
     [self.pinger start];
+    NSLog(@"%@",self.pinger.hostName);
+	
+	//TODO: active processing indicator of ping server.
     
-    
-    
-    
+
+}
+
+
+//Set ping time to the perset of given index and reload the cell in preset table view.
+- (void)setPingTimeToPresetAtIndex:(NSInteger)index pingTime:(NSInteger)pingTime{
+	
+	
+       ((sshConfig *)_presetList[index]).pingTime = pingTime;
+       [self.presetTebleView reloadDataForRowIndexes:[[NSIndexSet alloc]initWithIndex:index] columnIndexes:[[NSIndexSet alloc]initWithIndex:0]];
+
 }
 
 
@@ -705,39 +750,6 @@ int rand_range(int min_n, int max_n)
 // and via a timer (to continue sending pings periodically).
 - (void)sendPing
 {
-    if(pingCounter>=4){
-    
-        if(currentPingingPresetIndex<[_presetList count]){
-            //还没全部Ping完
-            //开始ping下一个
-            pingCounter = 1;
-            currentPingingPresetIndex ++;
-            
-            
-            [self.pinger stop];
-            
-            
-            //Start pinging next Server with a new Pinger.
-            self.pinger = [SimplePing simplePingWithHostName:[(sshConfig *)_presetList[currentPingingPresetIndex] hostName]];
-            self.pinger.delegate = self;
-            pingCounter = 0;
-            [self.pinger start];
-            return;
-            
-        }
-        else{
-            
-            //全部Ping完了
-            [self.sendTimer invalidate];
-            self.sendTimer = nil;
-            [self.pinger stop];
-            return;
-        
-        }
-        
-
-    }
-    
     
     
     assert(self.pinger != nil);
@@ -751,7 +763,6 @@ int rand_range(int min_n, int max_n)
 // A SimplePing delegate callback method.  We respond to the startup by sending a
 // ping immediately and starting a timer to continue sending them every second.
 - (void)simplePing:(SimplePing *)pinger didStartWithAddress:(NSData *)address
-
 {
 #pragma unused(pinger)
     assert(pinger == self.pinger);
@@ -766,7 +777,7 @@ int rand_range(int min_n, int max_n)
     // And start a timer to send the subsequent pings.
     
     assert(self.sendTimer == nil);
-    self.sendTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sendPing) userInfo:nil repeats:YES];
+    self.sendTimer = [NSTimer scheduledTimerWithTimeInterval:pinger.timeOut+1 target:self selector:@selector(sendPing) userInfo:nil repeats:YES];
     
 }
 
@@ -779,6 +790,9 @@ int rand_range(int min_n, int max_n)
     assert(pinger == self.pinger);
 #pragma unused(error)
     NSLog(@"failed: %@", [self shortErrorFromError:error]);
+	
+	//TODO:PingFaild
+	//TODO:stop processing indicator
     
     [self.sendTimer invalidate];
     self.sendTimer = nil;
@@ -787,6 +801,8 @@ int rand_range(int min_n, int max_n)
     // We do however want to nil out pinger so that the runloop stops.
     
     self.pinger = nil;
+    
+    [self pingOver:-1];
 }
 
 
@@ -801,7 +817,11 @@ int rand_range(int min_n, int max_n)
     
     startPingTime = [NSDate date];
     NSLog(@"#%u sent", (unsigned int) OSSwapBigToHostInt16(((const ICMPHeader *) [packet bytes])->sequenceNumber) );
+    
+    
+    
 }
+
 
 
 
@@ -810,11 +830,14 @@ int rand_range(int min_n, int max_n)
 // A SimplePing delegate callback method.  We just log the failure.
 - (void)simplePing:(SimplePing *)pinger didFailToSendPacket:(NSData *)packet error:(NSError *)error
 {
+
 #pragma unused(pinger)
     assert(pinger == self.pinger);
 #pragma unused(packet)
 #pragma unused(error)
     NSLog(@"#%u send failed: %@", (unsigned int) OSSwapBigToHostInt16(((const ICMPHeader *) [packet bytes])->sequenceNumber), [self shortErrorFromError:error]);
+    
+	[self pingOver :-1];
 }
 
 
@@ -823,19 +846,25 @@ int rand_range(int min_n, int max_n)
 // A SimplePing delegate callback method.  We just log the reception of a ping response.
 - (void)simplePing:(SimplePing *)pinger didReceivePingResponsePacket:(NSData *)packet
 {
+	
+
 #pragma unused(pinger)
     assert(pinger == self.pinger);
 #pragma unused(packet)
     
     NSTimeInterval duration = [startPingTime timeIntervalSinceNow];
+	 // += (duration * -1000);
     NSLog(@"#%u received, time = %f ms", (unsigned int) OSSwapBigToHostInt16([SimplePing icmpInPacket:packet]->sequenceNumber),duration*-1000 );
     
+	[self pingOver :(duration * -1000)];
 }
+
 
 
 // A SimplePing delegate callback method.  We just log the receive.
 - (void)simplePing:(SimplePing *)pinger didReceiveUnexpectedPacket:(NSData *)packet
 {
+
     const ICMPHeader *  icmpPtr;
     
 #pragma unused(pinger)
@@ -848,6 +877,88 @@ int rand_range(int min_n, int max_n)
     } else {
         NSLog(@"unexpected packet size=%zu", (size_t) [packet length]);
     }
+	
+	[self pingOver :-1];
+}
+
+
+-(void)simplePing:(SimplePing *)pinger didTimeoutWaitingForResponsePacket:(NSInteger)timeOut{
+
+    NSLog(@"ping time out.");
+    [self pingOver:-1];
+
+
+}
+
+
+- (void)pingNextServer{
+
+	
+    [self.pinger stop];
+    self.pinger = nil;
+    [self.sendTimer invalidate];
+    self.sendTimer = nil;
+
+    
+    if(currentPingingPresetIndex<[_presetList count]-1){
+        //还没全部Ping完
+        //开始ping下一个
+        currentPingingPresetIndex ++;
+        
+        
+ 
+        totalPingTime = 0;
+        //Start pinging next Server with a new Pinger.
+        self.pinger = [SimplePing simplePingWithHostName:[(sshConfig *)_presetList[currentPingingPresetIndex] hostName]];
+        self.pinger.delegate = self;
+        pingCounter = 0;
+        [self.pinger start];
+        NSLog(@"%@",self.pinger.hostName);
+        return;
+        
+    }
+    else{
+        
+        //全部Ping完了
+
+		//TODO:stop processing indicator
+        return;
+    
+    }
+	
+}
+
+- (void)pingOver:(NSInteger)pingTime{
+	
+	if(pingTime > 0){
+		
+		totalPingTime += pingTime;
+		
+	    if(pingCounter>=4){
+			//当前服务器ping完了
+			//set ping time to preset
+				
+			[self setPingTimeToPresetAtIndex:currentPingingPresetIndex pingTime:totalPingTime/4 ];
+			[self pingNextServer];
+
+	    }
+		
+	}
+	else{
+		//ping next
+		
+		
+		[self setPingTimeToPresetAtIndex:currentPingingPresetIndex pingTime:-1 ];
+		[self pingNextServer];
+
+       
+	}
+	
+	
+
+
+    
+	
 }
 
 

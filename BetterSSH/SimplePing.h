@@ -78,6 +78,8 @@
 @property (nonatomic, copy,   readonly ) NSData *               hostAddress;
 @property (nonatomic, assign, readonly ) uint16_t               identifier;
 @property (nonatomic, assign, readonly ) uint16_t               nextSequenceNumber;
+@property NSInteger timeOut;
+@property NSMutableSet *sequenceNumbersWithoutResults;
 
 - (void)start;
     // Starts the pinger object pinging.  You should call this after 
@@ -132,6 +134,8 @@
 - (void)simplePing:(SimplePing *)pinger didReceiveUnexpectedPacket:(NSData *)packet;
     // Called whenever the SimplePing object receives an ICMP packet that does not 
     // look like a response to one of our pings.
+
+- (void)simplePing:(SimplePing *)pinger didTimeoutWaitingForResponsePacket:(NSInteger)timeOut;
 
 @end
 

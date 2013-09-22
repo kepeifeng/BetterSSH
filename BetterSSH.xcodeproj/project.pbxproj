@@ -97,6 +97,7 @@
 		04F0022E17D8CE5E00749E05 /* tabs_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022817D8CE5E00749E05 /* tabs_02.png */; };
 		04F0023017D8CE5E00749E05 /* tabs_highlight_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */; };
 		04F0023117D8CE5E00749E05 /* tabs_highlight_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */; };
+		3774321517EE9C410083F32D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774321417EE9C410083F32D /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +212,7 @@
 		04F0022817D8CE5E00749E05 /* tabs_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_02.png; path = ../tabs_02.png; sourceTree = "<group>"; };
 		04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_01.png; path = ../tabs_highlight_01.png; sourceTree = "<group>"; };
 		04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_02.png; path = ../tabs_highlight_02.png; sourceTree = "<group>"; };
+		3774321417EE9C410083F32D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3774321517EE9C410083F32D /* SystemConfiguration.framework in Frameworks */,
 				04F001FA17D87EFD00749E05 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +347,7 @@
 		04F001F817D87EFD00749E05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3774321417EE9C410083F32D /* SystemConfiguration.framework */,
 				04F001F917D87EFD00749E05 /* Cocoa.framework */,
 				04F001FB17D87EFD00749E05 /* Other Frameworks */,
 			);

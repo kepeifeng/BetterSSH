@@ -29,6 +29,8 @@
     NSInteger pingCounter;
     NSMutableArray *cellArray;
     NSInteger currentPingingPresetIndex;
+	NSInteger totalPingTime;
+	BOOL pingPass;
     
 }
 
