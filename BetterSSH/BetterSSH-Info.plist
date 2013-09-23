@@ -47,6 +47,11 @@
 	<string>Copyright © 2013 Kent Peifeng Ke. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>big_noodle_titling.ttf</string>
+		<string>big_noodle_titling_oblique.ttf</string>
+	</array>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

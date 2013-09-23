@@ -121,10 +121,11 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
 
 @synthesize hostName           = _hostName;
 @synthesize hostAddress        = _hostAddress;
-
+@synthesize timeOut            = _timeOut;
 @synthesize delegate           = _delegate;
 @synthesize identifier         = _identifier;
 @synthesize nextSequenceNumber = _nextSequenceNumber;
+@synthesize sequenceNumbersWithoutResults = _sequenceNumbersWithoutResults;
 
 - (id)initWithHostName:(NSString *)hostName address:(NSData *)hostAddress
     // The initialiser common to both of our construction class methods.
@@ -135,6 +136,8 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
         self->_hostName    = [hostName copy];
         self->_hostAddress = [hostAddress copy];
         self->_identifier  = (uint16_t) arc4random();
+        self.timeOut       = 1;
+        self.sequenceNumbersWithoutResults = [[NSMutableSet alloc]init];
     }
     return self;
 }
@@ -158,6 +161,20 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
 {
     return [[SimplePing alloc] initWithHostName:NULL address:hostAddress];
 }
+
+
+- (void)verifyTimeoutForSequenceNumber:(NSNumber *)n {
+    if ([_sequenceNumbersWithoutResults containsObject:n]) {
+        // Timeout.
+        [_sequenceNumbersWithoutResults removeObject:n];
+        
+        // Tell the client.
+        if ( (self.delegate != nil) && [self.delegate respondsToSelector:@selector(simplePing:didTimeoutWaitingForResponsePacket:)] ) {
+            [self.delegate simplePing:self didTimeoutWaitingForResponsePacket:self.timeOut];
+        }
+    }
+}
+
 
 - (void)noop
 {
@@ -246,8 +263,15 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
         bytesSent = -1;
         err = EBADF;
     } else {
+        
+        CFSocketNativeHandle sock = CFSocketGetNative(self->_socket);
+        struct timeval tv;
+        tv.tv_sec  = self.timeOut;
+        tv.tv_usec = 100000; // 0.1 sec
+        setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, (void *)&tv, sizeof(tv));
+        
         bytesSent = sendto(
-            CFSocketGetNative(self->_socket),
+            sock,
             [packet bytes],
             [packet length], 
             0, 
@@ -264,6 +288,10 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
     
     if ( (bytesSent > 0) && (((NSUInteger) bytesSent) == [packet length]) ) {
 
+        NSNumber *currentSequenceNumber = [NSNumber numberWithUnsignedShort:self.nextSequenceNumber];
+        [_sequenceNumbersWithoutResults addObject:currentSequenceNumber];
+        if (self.timeOut > 0) [self performSelector:@selector(verifyTimeoutForSequenceNumber:) withObject:currentSequenceNumber afterDelay:self.timeOut];
+        
         // Complete success.  Tell the client.
 
         if ( (self.delegate != nil) && [self.delegate respondsToSelector:@selector(simplePing:didSendPacket:)] ) {
@@ -285,6 +313,7 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
     
     self.nextSequenceNumber += 1;
 }
+
 
 + (NSUInteger)icmpHeaderOffsetInPacket:(NSData *)packet
     // Returns the offset of the ICMPHeader within an IP packet.
@@ -355,6 +384,7 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
     return result;
 }
 
+
 - (void)readData
     // Called by the socket handling code (SocketReadCallback) to process an ICMP 
     // messages waiting on the socket.
@@ -392,6 +422,13 @@ static uint16_t in_cksum(const void *buffer, size_t bufferLen)
         // We got some data, pass it up to our client.
 
         if ( [self isValidPingResponsePacket:packet] ) {
+
+            // Signal that result is available for sequence number
+            const ICMPHeader *icmpPtr = [SimplePing icmpInPacket:packet];
+            assert(_sequenceNumbersWithoutResults != nil);
+            [_sequenceNumbersWithoutResults removeObject:[NSNumber numberWithUnsignedShort:OSSwapBigToHostInt16(icmpPtr->sequenceNumber)]];
+            
+
             if ( (self.delegate != nil) && [self.delegate respondsToSelector:@selector(simplePing:didReceivePingResponsePacket:)] ) {
                 [self.delegate simplePing:self didReceivePingResponsePacket:packet];
             }
@@ -475,7 +512,7 @@ static void SocketReadCallback(CFSocketRef s, CFSocketCallBackType type, CFDataR
         
         // Wrap it in a CFSocket and schedule it on the runloop.
         
-        self->_socket = CFSocketCreateWithNative(NULL, fd, kCFSocketReadCallBack, SocketReadCallback, &context);
+        self->_socket = CFSocketCreateWithNative(NULL, fd, kCFSocketReadCallBack | kCFSocketConnectCallBack, SocketReadCallback, &context);
         assert(self->_socket != NULL);
         
         // The socket will now take care of cleaning up our file descriptor.
