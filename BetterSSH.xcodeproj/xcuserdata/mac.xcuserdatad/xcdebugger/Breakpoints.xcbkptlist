@@ -65,7 +65,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "450"
          endingLineNumber = "450"
-         landmarkName = "-savePresetsToFile"
+         landmarkName = "-newPreset:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -78,7 +78,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "417"
          endingLineNumber = "417"
-         landmarkName = "-getPresetsFromFile"
+         landmarkName = "-savePresetsToFile"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -156,8 +156,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "387"
          endingLineNumber = "387"
-         landmarkName = "-convertSshConfigListToDictionaryList:"
-         landmarkType = "5">
+         landmarkName = "@implementation presetManager"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -221,7 +221,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "279"
          endingLineNumber = "279"
-         landmarkName = "-tableView:viewForTableColumn:row:"
+         landmarkName = "-tableViewSelectionDidChange:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -234,8 +234,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "306"
          endingLineNumber = "306"
-         landmarkName = "-tableViewSelectionDidChange:"
-         landmarkType = "5">
+         landmarkName = "@implementation presetManager"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -260,7 +260,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "325"
          endingLineNumber = "325"
-         landmarkName = "-tableView:rowViewForRow:"
+         landmarkName = "-closeSheetClicked:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
