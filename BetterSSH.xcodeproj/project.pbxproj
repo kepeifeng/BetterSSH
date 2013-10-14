@@ -83,6 +83,9 @@
 		04C30B9E17E191FA004C8DEB /* getservice.py in Resources */ = {isa = PBXBuildFile; fileRef = 04C30B9A17E191FA004C8DEB /* getservice.py */; };
 		04C30B9F17E191FA004C8DEB /* pass in Resources */ = {isa = PBXBuildFile; fileRef = 04C30B9B17E191FA004C8DEB /* pass */; };
 		04C30BA017E191FA004C8DEB /* ssh in Resources */ = {isa = PBXBuildFile; fileRef = 04C30B9C17E191FA004C8DEB /* ssh */; };
+		04E2259E180BAC52000F94BE /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 04E2259D180BAC52000F94BE /* dsa_pub.pem */; };
+		04E2270C180BD141000F94BE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E2270B180BD141000F94BE /* Sparkle.framework */; };
+		04E2270D180BD2B5000F94BE /* Sparkle.framework in Resources */ = {isa = PBXBuildFile; fileRef = 04E2270B180BD141000F94BE /* Sparkle.framework */; };
 		04F001FA17D87EFD00749E05 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F001F917D87EFD00749E05 /* Cocoa.framework */; };
 		04F0020417D87EFD00749E05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F0020217D87EFD00749E05 /* InfoPlist.strings */; };
 		04F0020617D87EFD00749E05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0020517D87EFD00749E05 /* main.m */; };
@@ -98,7 +101,6 @@
 		04F0023017D8CE5E00749E05 /* tabs_highlight_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022A17D8CE5E00749E05 /* tabs_highlight_01.png */; };
 		04F0023117D8CE5E00749E05 /* tabs_highlight_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */; };
 		3771662017EEB70A0069AABC /* myLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3771661F17EEB70A0069AABC /* myLabel.m */; };
-		3771662317EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3771662217EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m */; };
 		3774321517EE9C410083F32D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774321417EE9C410083F32D /* SystemConfiguration.framework */; };
 		3774321617EEB2BE0083F32D /* big_noodle_titling_oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0439337D17E953AE00615C89 /* big_noodle_titling_oblique.ttf */; };
 		3774321717EEB2BE0083F32D /* big_noodle_titling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0439337E17E953AE00615C89 /* big_noodle_titling.ttf */; };
@@ -194,6 +196,8 @@
 		04C30B9A17E191FA004C8DEB /* getservice.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = getservice.py; sourceTree = "<group>"; };
 		04C30B9B17E191FA004C8DEB /* pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pass; sourceTree = "<group>"; };
 		04C30B9C17E191FA004C8DEB /* ssh */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ssh; sourceTree = "<group>"; };
+		04E2259D180BAC52000F94BE /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		04E2270B180BD141000F94BE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		04F001F617D87EFD00749E05 /* BetterSSH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterSSH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F001F917D87EFD00749E05 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		04F001FC17D87EFD00749E05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -218,8 +222,6 @@
 		04F0022B17D8CE5E00749E05 /* tabs_highlight_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabs_highlight_02.png; path = ../tabs_highlight_02.png; sourceTree = "<group>"; };
 		3771661E17EEB70A0069AABC /* myLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myLabel.h; sourceTree = "<group>"; };
 		3771661F17EEB70A0069AABC /* myLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myLabel.m; sourceTree = "<group>"; };
-		3771662117EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSVerticallyCenteredTextFieldCell.h; sourceTree = "<group>"; };
-		3771662217EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSVerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
 		3774321417EE9C410083F32D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3774321517EE9C410083F32D /* SystemConfiguration.framework in Frameworks */,
+				04E2270C180BD141000F94BE /* Sparkle.framework in Frameworks */,
 				04F001FA17D87EFD00749E05 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +273,7 @@
 		04C30B8A17E16F58004C8DEB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				04E2259D180BAC52000F94BE /* dsa_pub.pem */,
 				0493FC8E17E9A0EE00771582 /* progress */,
 				0439337D17E953AE00615C89 /* big_noodle_titling_oblique.ttf */,
 				0439337E17E953AE00615C89 /* big_noodle_titling.ttf */,
@@ -355,6 +359,7 @@
 		04F001F817D87EFD00749E05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E2270B180BD141000F94BE /* Sparkle.framework */,
 				3774321417EE9C410083F32D /* SystemConfiguration.framework */,
 				04F001F917D87EFD00749E05 /* Cocoa.framework */,
 				04F001FB17D87EFD00749E05 /* Other Frameworks */,
@@ -400,8 +405,6 @@
 				0422DDC617D9B9A9003F5D23 /* sshController.m */,
 				04F0021617D88A2000749E05 /* startButton.h */,
 				04F0021717D88A2000749E05 /* startButton.m */,
-				3771662117EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.h */,
-				3771662217EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m */,
 				04F0020017D87EFD00749E05 /* Supporting Files */,
 				3771661E17EEB70A0069AABC /* myLabel.h */,
 				3771661F17EEB70A0069AABC /* myLabel.m */,
@@ -457,6 +460,40 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ar,
+				ca,
+				cs,
+				cy,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				is,
+				it,
+				ja,
+				ko,
+				nl,
+				no,
+				pl,
+				"pt-BR",
+				pt_BR,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sl,
+				sv,
+				English,
+				th,
+				tr,
+				uk,
+				zh_CN,
+				zh_TW,
 			);
 			mainGroup = 04F001ED17D87EFD00749E05;
 			productRefGroup = 04F001F717D87EFD00749E05 /* Products */;
@@ -473,6 +510,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E2270D180BD2B5000F94BE /* Sparkle.framework in Resources */,
+				04E2259E180BAC52000F94BE /* dsa_pub.pem in Resources */,
 				04F0020417D87EFD00749E05 /* InfoPlist.strings in Resources */,
 				04F0020A17D87EFD00749E05 /* Credits.rtf in Resources */,
 				04F0021017D87EFD00749E05 /* MainMenu.xib in Resources */,
@@ -573,7 +612,6 @@
 				04B440E217E1A906009A59A8 /* TaskWrapper.m in Sources */,
 				04B440E317E1A917009A59A8 /* ssh_interface.m in Sources */,
 				04790FC217E334A60003B26E /* SecretSocksController.m in Sources */,
-				3771662317EEC5F10069AABC /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 				04511BC617E8543700A5498E /* myTableRowView.m in Sources */,
 				0493FC8D17E9694B00771582 /* SimplePing.m in Sources */,
 			);
@@ -670,6 +708,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mac/Documents/Projects/BetterSSH,
+					"/Users/mac/Downloads/Sparkle\\ 1.5b6",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BetterSSH/BetterSSH-Prefix.pch";
 				INFOPLIST_FILE = "BetterSSH/BetterSSH-Info.plist";
@@ -682,6 +725,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mac/Documents/Projects/BetterSSH,
+					"/Users/mac/Downloads/Sparkle\\ 1.5b6",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BetterSSH/BetterSSH-Prefix.pch";
 				INFOPLIST_FILE = "BetterSSH/BetterSSH-Info.plist";

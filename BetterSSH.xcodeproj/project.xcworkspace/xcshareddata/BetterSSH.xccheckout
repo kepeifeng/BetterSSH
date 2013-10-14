@@ -5,31 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-<<<<<<< HEAD
-	<string>46631A37-F627-436E-8D20-81ADE6735B9B</string>
-=======
-	<string>359C104B-7E33-4EEE-951F-BFAB110B6454</string>
->>>>>>> d737f628ea1bf0b3239c819aa31c3e16d0ba1b1f
+	<string>455EA306-B9C2-4739-9AE3-20D67A81D33C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BetterSSH</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-<<<<<<< HEAD
-		<key>1BCDF4B5-94D5-406B-BBD5-50E3C7B08F2C</key>
-=======
-		<key>7885588F-0541-40BD-9C62-F3CD74A113BE</key>
->>>>>>> d737f628ea1bf0b3239c819aa31c3e16d0ba1b1f
+		<key>E59F7902-3DEF-48F9-AD92-6BCCA04FA24F</key>
 		<string>https://github.com/kepeifeng/BetterSSH.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BetterSSH.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-<<<<<<< HEAD
-		<key>1BCDF4B5-94D5-406B-BBD5-50E3C7B08F2C</key>
-=======
-		<key>7885588F-0541-40BD-9C62-F3CD74A113BE</key>
->>>>>>> d737f628ea1bf0b3239c819aa31c3e16d0ba1b1f
+		<key>E59F7902-3DEF-48F9-AD92-6BCCA04FA24F</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -37,22 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-<<<<<<< HEAD
-	<string>1BCDF4B5-94D5-406B-BBD5-50E3C7B08F2C</string>
-=======
-	<string>7885588F-0541-40BD-9C62-F3CD74A113BE</string>
->>>>>>> d737f628ea1bf0b3239c819aa31c3e16d0ba1b1f
+	<string>E59F7902-3DEF-48F9-AD92-6BCCA04FA24F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-<<<<<<< HEAD
-			<string>1BCDF4B5-94D5-406B-BBD5-50E3C7B08F2C</string>
-=======
-			<string>7885588F-0541-40BD-9C62-F3CD74A113BE</string>
->>>>>>> d737f628ea1bf0b3239c819aa31c3e16d0ba1b1f
+			<string>E59F7902-3DEF-48F9-AD92-6BCCA04FA24F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BetterSSH</string>
 		</dict>

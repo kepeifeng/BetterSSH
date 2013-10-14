@@ -66,7 +66,8 @@ id statusBarIconConnected;
     //self.presetManager = [[presetManager alloc] init];
     [self.configPanel addSubview:self.configController.view];
     
-    [self.presetManager setPresetSelectedToConnectAction:self action:@selector(presetSelectedToConnect:)];
+    //[self.presetManager setPresetSelectedToConnectAction:self action:@selector(presetSelectedToConnect:)];
+    [self.presetManager setDelegate:self];
 
     //Set config tab view to tabless and borderless
     tabView.tabViewType = NSNoTabsNoBorder;
@@ -293,6 +294,19 @@ id statusBarIconConnected;
     [self savePrefs];
 }
 
+
+#pragma mark - Preset Manager Protocol Implement
+-(void)presetManger:(presetManager *)presetManger appendOutput:(NSString *)output{
+
+    [self appendOutput:output];
+
+}
+
+-(void)presetManger:(presetManager *)presetManger applyConfig:(sshConfig *)config{
+
+    [self presetSelectedToConnect:config];
+
+}
 
 
 // This callback is implemented as part of conforming to the ProcessController protocol.

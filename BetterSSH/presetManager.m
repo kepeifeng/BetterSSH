@@ -153,15 +153,22 @@ sshConfig *_newConfigToSave;
 - (IBAction)usePresetConfigToConnectClicked:(id)sender {
     
     [self closeSheetClicked:nil];
-    if(presetSelectedToConnectActionTarget && [presetSelectedToConnectActionTarget respondsToSelector:presetSelectedToConnectAction]){
-        //TODO: VALID SELECTOR
-        //[self.delegate respondsToSelector:@selector(simplePing:didTimeoutWaitingForResponsePacket:)]
-        
-        [presetSelectedToConnectActionTarget performSelector:presetSelectedToConnectAction withObject:self.presetSelectedToConnect];
     
-            
-        
+    if(self.delegate){
+    
+        [self.delegate presetManger:self applyConfig:self.presetSelectedToConnect];
+    
     }
+    
+//    if(presetSelectedToConnectActionTarget && [presetSelectedToConnectActionTarget respondsToSelector:presetSelectedToConnectAction]){
+//        //TODO: VALID SELECTOR
+//        //[self.delegate respondsToSelector:@selector(simplePing:didTimeoutWaitingForResponsePacket:)]
+//        
+//        [presetSelectedToConnectActionTarget performSelector:presetSelectedToConnectAction withObject:self.presetSelectedToConnect];
+//    
+//            
+//        
+//    }
     
 }
 

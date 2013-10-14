@@ -14,8 +14,9 @@
 #import "myTableRowView.h"
 #import "SimplePing.h"
 
+@protocol PresetManagerDelegate;
 
-
+#pragma mark - Preset Manger Interface
 @interface presetManager : NSObject <NSTableViewDataSource, NSTableViewDelegate,NSOpenSavePanelDelegate,SimplePingDelegate>{
 
     IBOutlet NSWindow *sheet;
@@ -36,13 +37,15 @@
     
 }
 
+#pragma mark - Properties
 @property NSMutableArray *presets;
-
 @property (weak) IBOutlet myTableView *presetTebleView;
 @property (nonatomic) BOOL isEditingMode;
+@property id <PresetManagerDelegate> delegate;
+@property (nonatomic, strong, readwrite) SimplePing *   pinger;
+@property (nonatomic, strong, readwrite) NSTimer *      sendTimer;
 
-
-
+#pragma mark - Actions
 //Close preset editing sheet
 - (IBAction)closeSheetClicked:(id)sender;
 - (IBAction)editPresetClicked:(id)sender;
@@ -55,7 +58,7 @@
 - (IBAction)pingServersClicked:(id)sender;
 
 
-
+#pragma - Private Methods
 - (BOOL)importPresets:(out NSString *)error;
 - (BOOL)exportPresets:(out NSString *)error;
 
@@ -65,6 +68,8 @@
 - (void)newPreset:(sshConfig *)config;
 - (void)saveNewPreset:(sshConfig *)config;
 
+
+#pragma mark - IBOutlets
 @property (weak) IBOutlet NSButton *editButton;
 @property (weak) IBOutlet NSButton *saveButton;
 @property (weak) IBOutlet NSButton *cancelButton;
@@ -74,11 +79,18 @@
 @property (weak) IBOutlet NSButton *pingButton;
 @property (weak) IBOutlet NSProgressIndicator *pingProgressIndicator;
 
-
-
-
-@property (nonatomic, strong, readwrite) SimplePing *   pinger;
-@property (nonatomic, strong, readwrite) NSTimer *      sendTimer;
-
 @end
 
+
+
+
+
+#pragma mark - Preset Manger Delegate Protocol
+@protocol PresetManagerDelegate <NSObject>
+
+
+-(void)presetManger:(presetManager *)presetManger appendOutput:(NSString *)output;
+-(void)presetManger:(presetManager *)presetManger applyConfig:(sshConfig *)config;
+
+
+@end

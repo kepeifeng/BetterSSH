@@ -13,7 +13,7 @@
 #import "sshConfig.h"
 #import <ServiceManagement/SMLoginItem.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate,TaskWrapperController>{
+@interface AppDelegate : NSObject <NSApplicationDelegate,TaskWrapperController,PresetManagerDelegate>{
 
     IBOutlet NSTabView *tabView;
 
